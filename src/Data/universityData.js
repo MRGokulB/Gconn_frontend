@@ -14,10 +14,12 @@ const universityData = {
   navLinks: [
     { title: "Home", path: "/" },
     { title: "About Us", path: "/about" },
+    { title: "Annexures", path: "/annexures" },
     { title: "University", path: "/university" },
     { title: "Examination", path: "/examination" },
     { title: "Academic", path: "/academic" },
-    { title: "Online Payment", path: "/payment" }
+    { title: "Online Payment", path: "/payment" },
+    { path: "/faculty", title: "Faculty" },
   ],
 
   // important side links (left column)
