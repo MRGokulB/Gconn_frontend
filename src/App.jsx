@@ -4,24 +4,42 @@ import FacultyPage from './Pages/Faculty';
 import FacultyDetail from './Pages/FacultyDetail';
 import AnnexurePage from './Pages/Annexure';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
+// import Home from './pages/Home';
 // import About from './pages/About';
+
+// Import other page components as needed
+import Header from './components/Header';
+import HeroSection from './components/HeroSection';
+import Announcements from './components/Announcements';
+import LatestNews from './components/LatestNews';
+import EventsCalendar from './components/EventsCalendar';
+import ResearchHighlights from './components/ResearchHighlights';
+import StatsSection from './components/StatsSection';
+import LifeAtIITBombay from './components/LifeAtIITBombay';
+import Footer from './components/Footer';
+import TopOfficers from './components/TopOfficers';
+import About from './Pages/About';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/faculty" element={<FacultyPage />} />
-        <Route path="/faculty/:name" element={<FacultyDetail />} />
-        <Route path="/annexures" element={<AnnexurePage />} />
-        {/* <Route path="/about" element={<About />} />  */}
-        {/* Add more pages/routes here */}
-      </Routes>
-    </Router>
+
+    <>
+      <Header />
+      <HeroSection />
+      <TopOfficers />
+      <About />
+      <Announcements />
+      <LatestNews />
+      <EventsCalendar />
+      <ResearchHighlights />
+      <StatsSection />
+      <LifeAtIITBombay />
+      <Footer />
+    </>
+
+
 
   );
 }
