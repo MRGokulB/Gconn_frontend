@@ -33,6 +33,9 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, [images.length]);
 
+  // Function to convert title to id (lowercase + replace spaces & & with -)
+  const getId = (title) => title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '');
+
   return (
     <section className="relative w-full h-[550px] overflow-hidden">
       {/* Images */}
@@ -62,14 +65,21 @@ const HeroSection = () => {
         {menuItems.map((item, index) => (
           <div
             key={index}
-            className="relative"
+            className="relative group cursor-pointer"
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
+            onClick={() => {
+              const section = document.getElementById(getId(item.title));
+              if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
           >
-            <div className="flex items-center gap-1 cursor-pointer text-gray-300 hover:text-gray-100 transition font-semibold">
+            <div className="flex items-center gap-1 text-gray-300 hover:text-gray-100 transition font-semibold">
               <span>{item.title}</span>
               <span className="text-xs">▼</span>
             </div>
+
             {/* Hover info */}
             {hoveredIndex === index && (
               <div className="absolute top-full left-0 mt-2 bg-white/90 text-gray-800 p-3 rounded-md shadow-md w-60 text-center">

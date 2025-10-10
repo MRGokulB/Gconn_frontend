@@ -1,38 +1,45 @@
 import React from "react";
 
+import NangraleImg from '../assets/images/Faculty/Nangrale.jpeg';
+import ChakreImg from '../assets/images/Faculty/Chakre.jpg';
+import ChandbibiImg from '../assets/images/Faculty/Chandbibi.jpeg';
+import ShaikhImg from '../assets/images/Faculty/Shaikh.jpg';
+import DeshmaneImg from '../assets/images/Faculty/Deshmane.jpg';
+import MadleImg from '../assets/images/Faculty/Madle.jpg';
+
 const officers = [
   {
-    name: "Hon’ble Shri Acharya Devvrat",
-    title: "Chancellor",
-    subtitle: "Governor of Maharashtra",
-    img: "/images/acharya-devvrat.jpg",
+    name: "Prof. Balaji Nangrale",
+    title: "Principal • Administration",
+    // subtitle: "Governor of Maharashtra",
+    img: NangraleImg,
   },
   {
-    name: "Shri. Hasan Mushrif",
-    title: "Pro-Chancellor",
-    subtitle: "Minister of Medical Education",
-    img: "/images/hasan-mushrif.jpg",
+    name: "Prof. Bhimu Chakre",
+    title: "Vice Principal • Mental Health Nursing",
+    // subtitle: "Minister of Medical Education",
+    img: ChakreImg,
   },
   {
-    name: "Lt Gen Madhuri Kanitkar (Retd)",
-    title: "Vice-Chancellor",
-    subtitle: "PVSM, AVSM, VSM",
-    img: "/images/madhuri-kanitkar.jpg",
+    name: "Ms. Chandbibi Pathan",
+    title: "Tutor • ObGy",
+    // subtitle: "PVSM, AVSM, VSM",
+    img: ChandbibiImg,
   },
   {
-    name: "Prof. Dr. Milind Nikumbh",
-    title: "Pro Vice-Chancellor",
-    img: "/images/milind-nikumbh.jpg",
+    name: "Mr. Salim Shaikh",
+    title: "Tutor • Community Health",
+    img: ShaikhImg,
   },
   {
-    name: "Dr. Rajendra Bangal",
-    title: "Registrar",
-    img: "/images/rajendra-bangal.jpg",
+    name: "Ms. Unita Deshmane",
+    title: "Tutor • Nursing Foundation",
+    img: DeshmaneImg,
   },
   {
-    name: "Prof. Dr. Sandeep S. Kadu",
-    title: "Controller of Examinations",
-    img: "/images/sandeep-kadu.jpg",
+    name: "Ms. Pradnya Madle",
+    title: "Tutor • ObGy",
+    img: MadleImg,
   },
 ];
 
@@ -76,9 +83,9 @@ export default function TopOfficers() {
             )}
 
             {/* Know More Button */}
-            <button className="mt-4 px-4 py-1.5 border border-blue-700 text-blue-700 rounded-md hover:bg-blue-700 hover:text-white transition duration-300">
-              Know More
-            </button>
+            {/* <button className="mt-4 px-4 py-1.5 border border-blue-700 text-blue-700 rounded-md hover:bg-blue-700 hover:text-white transition duration-300"> */}
+              {/* Know More */}
+            {/* </button> */}
           </div>
         ))}
       </div>
