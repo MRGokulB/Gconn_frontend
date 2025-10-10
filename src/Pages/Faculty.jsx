@@ -1,16 +1,21 @@
 // src/Pages/Faculty.jsx
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { Menu } from 'lucide-react';
-import NangraleImg from '../assets/images/Faculty/Nangrale.jpeg';
-import AnsariImg from '../assets/images/Faculty/Ansari.jpeg';
-import ChakreImg from '../assets/images/Faculty/Chakre.jpg';
-import ChandbibiImg from '../assets/images/Faculty/Chandbibi.jpeg';
-import DeshmaneImg from '../assets/images/Faculty/Deshmane.jpg';
-import MadleImg from '../assets/images/Faculty/Madle.jpg';
+import { Menu, Mail, User } from 'lucide-react';
+import NangraleImg from '../assets/images/Faculty/Nangrale B B.jpg';
+import AnsariImg from '../assets/images/Faculty/Ansari.jpg';
+import ChakreImg from '../assets/images/Faculty/Chakre B P.jpg';
+import ChandbibiImg from '../assets/images/Faculty/Pathan C H.jpg';
+import DeshmaneImg from '../assets/images/Faculty/Deshmane U B.jpg';
+import MadleImg from '../assets/images/Faculty/Madle P A.jpg';
 import MohiteImg from '../assets/images/Faculty/Mohite.jpeg';
-import PalwadeImg from '../assets/images/Faculty/Palwade.jpg';
+import PalwadeImg from '../assets/images/Faculty/Palwade R V.jpg';
 import ShaikhImg from '../assets/images/Faculty/Shaikh.jpg';
+import MahapureImg  from '../assets/images/Faculty/Mahapure Shreenivas.jpg';
+import MaskeImg from '../assets/images/Faculty/Maske Shreedevi.jpeg';
+import RathodImg from '../assets/images/Faculty/Rathod Sushil.jpg';
+import KendreImg from '../assets/images/Faculty/Kendre S.jpg';
+import ChavanImg from '../assets/images/Faculty/Chavan Sunil.jpg';
 
 const staticFacultyMembers = [
     {
@@ -18,7 +23,7 @@ const staticFacultyMembers = [
         image: NangraleImg, 
         title: 'Principal • Administration',
         email: 'balajinagrale@gmail.com',
-        bio: ` College of Nursing, proposes to prepare nurses for global healthcare industry. The health care needs of people are dynamic and are more challenging with emerging new diseases and increasing load of non-communicable diseases. The nurses today have their roles expanded from traditional care giving to their contributions in preventive and promotive aspects of health. Our college with its state of the art facilities shall be one of the best college of nursing in the Nanded district and Marathawada region of Maharashtra.
+        bio: `College of Nursing, proposes to prepare nurses for global healthcare industry. The health care needs of people are dynamic and are more challenging with emerging new diseases and increasing load of non-communicable diseases. The nurses today have their roles expanded from traditional care giving to their contributions in preventive and promotive aspects of health. Our college with its state of the art facilities shall be one of the best college of nursing in the Nanded district and Marathawada region of Maharashtra.
         Today, alternative and complementary modalities of treatment is accessible and affordable to people of all classes. Nurses need to be trained in caring for clients choosing from these diverse treatment modalities. The books of nursing demand inclusions of extensive literature related to caring the patients opting such modalities. This college is committed to fulfil these demands of the present client. As head of the College of Nursing, I feel privileged to be part of a visionary group committed to social cause and quality health professional's education.
         The pass outs can work as Registered nurse in Government/ private Hospitals, medical institutes, colleges, etc. The candidates have great demand in national as well as international health care sectors. Also they can pursue higher education in M.Sc nursing which enables them to seek teaching profession in Nursing.`    
     },
@@ -48,14 +53,14 @@ const staticFacultyMembers = [
         image: ShaikhImg,
         title: 'Tutor • Community Health',
         email: 'ss13111972@gmail.com',
-        bio: `I have dedicated my career to public health and preventive care, and our college’s vision resonates deeply with me. Every day, I endeavor to make learning practical and meaningful, so my students become caring, action-driven health professionals. I believe our collective efforts will continue to uplift communities, address health disparities, and create a healthier society for all.`
+        bio: `I have dedicated my career to public health and preventive care, and our college's vision resonates deeply with me. Every day, I endeavor to make learning practical and meaningful, so my students become caring, action-driven health professionals. I believe our collective efforts will continue to uplift communities, address health disparities, and create a healthier society for all.`
     },
     {
         name: 'Ms. Sunita Giri',
         image: '/assets/images/t4.jpg',
         title: 'Tutor • Nursing Foundation',
         email: 'sggirir27m@gmail.com',
-        bio: `At the core of nursing lies a blend of knowledge, skill, and compassion. I am committed to helping each student master the fundamentals that define excellent nursing practice. I value the college’s emphasis on discipline and modern education and believe that every student should take pride in their journey toward becoming a skilled and ethical caregiver.`
+        bio: `At the core of nursing lies a blend of knowledge, skill, and compassion. I am committed to helping each student master the fundamentals that define excellent nursing practice. I value the college's emphasis on discipline and modern education and believe that every student should take pride in their journey toward becoming a skilled and ethical caregiver.`
     },
     {
         name: 'Ms. Unita Deshmane',
@@ -67,9 +72,9 @@ const staticFacultyMembers = [
     {
         name: 'Mr. Rameshwar Palwade',
         image: PalwadeImg,
-        title: 'Tutor • Communnity Health',
+        title: 'Tutor • Community Health',
         email: 'Rampalwade6171@gmail.com',
-        bio: `As a community health tutor, my mission is to inspire students to serve beyond hospital walls. I believe this college’s hands-on approach is key for preparing nurses who are adaptable and solution-oriented. I am dedicated to making learning relatable and impactful, so each nurse graduates ready to make a difference where it matters most.`
+        bio: `As a community health tutor, my mission is to inspire students to serve beyond hospital walls. I believe this college's hands-on approach is key for preparing nurses who are adaptable and solution-oriented. I am dedicated to making learning relatable and impactful, so each nurse graduates ready to make a difference where it matters most.`
     },
     {
         name: 'Mr. Muddassir Ansari',
@@ -83,13 +88,48 @@ const staticFacultyMembers = [
         image: MadleImg,
         title: 'Tutor • ObGy',
         email: 'pradnyamadle@gmail.com',
-        bio: `I believe that excellence in maternity and gynecology nursing starts with compassionate, competent training. Here, I focus on supporting students to develop their clinical expertise and personal growth. I am proud to work in a college that prioritizes women’s health and prepares graduates to meet the evolving needs of our communities.`
+        bio: `I believe that excellence in maternity and gynecology nursing starts with compassionate, competent training. Here, I focus on supporting students to develop their clinical expertise and personal growth. I am proud to work in a college that prioritizes women's health and prepares graduates to meet the evolving needs of our communities.`
     },
     {
         name: 'Mr. Ajay Mohite',
         image: MohiteImg,
         title: 'Tutor • Community Health',
         email: 'Ajaymohite@gmail.com',
+        bio: `Our college stands as a platform for growth and meaningful service. I am privileged to mentor students in community health, exposing them to public health challenges and innovative solutions. I see my role as motivating each student to pursue excellence, creativity, and compassion in their professional journey.`
+    },
+    {
+        name: 'Mr. Chavan Sunil',
+        image: ChavanImg,
+        title: 'Tutor • Community Health',
+        email: '',
+        bio: `Our college stands as a platform for growth and meaningful service. I am privileged to mentor students in community health, exposing them to public health challenges and innovative solutions. I see my role as motivating each student to pursue excellence, creativity, and compassion in their professional journey.`
+    },
+    {
+        name: 'Mr. S Kendre',
+        image: KendreImg,
+        title: 'Tutor • Community Health',
+        email: '',
+        bio: `Our college stands as a platform for growth and meaningful service. I am privileged to mentor students in community health, exposing them to public health challenges and innovative solutions. I see my role as motivating each student to pursue excellence, creativity, and compassion in their professional journey.`
+    },
+    {
+        name: 'Ms. Shreedevi Maske',
+        image: MaskeImg,
+        title: 'Tutor • Community Health',
+        email: '',
+        bio: `Our college stands as a platform for growth and meaningful service. I am privileged to mentor students in community health, exposing them to public health challenges and innovative solutions. I see my role as motivating each student to pursue excellence, creativity, and compassion in their professional journey.`
+    },
+    {
+        name: 'Mr. Sushil Rathod',
+        image: RathodImg,
+        title: 'Tutor • Community Health',
+        email: '',
+        bio: `Our college stands as a platform for growth and meaningful service. I am privileged to mentor students in community health, exposing them to public health challenges and innovative solutions. I see my role as motivating each student to pursue excellence, creativity, and compassion in their professional journey.`
+    },
+    {
+        name: 'Mr. Mahapure Shreenivas',
+        image: MahapureImg,
+        title: 'Tutor • Community Health',
+        email: '',
         bio: `Our college stands as a platform for growth and meaningful service. I am privileged to mentor students in community health, exposing them to public health challenges and innovative solutions. I see my role as motivating each student to pursue excellence, creativity, and compassion in their professional journey.`
     },
 ];
@@ -99,54 +139,81 @@ const FacultyPage = () => {
     const [facultyMembers, setFacultyMembers] = useState(staticFacultyMembers);
 
     useEffect(() => {
-        // To fetch from API in the future, replace below with actual API call.
-        // Example:
-        // fetch('/api/faculty')
-        //   .then(res => res.json())
-        //   .then(data => {
-        //     // If API doesn't have images, merge with static images list if possible.
-        //     setFacultyMembers(data);
-        //   });
+        // Future API integration placeholder
     }, []);
 
-    return (
-        <div className="bg-gray-100">
-            <header className="bg-white shadow">
-                <div className="max-w-6xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center">
-                        <div className="flex space-x-4">
-                            <div className="flex items-center flex-shrink-0 text-white mr-6">
-                                <span className="font-semibold text-xl tracking-tight">Gov. Nursing Medical College</span>
-                            </div>
-                            <div className="block lg:hidden">
-                                <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-                                    <Menu className="h-6 w-6" />
-                                </button>
-                            </div>
-                        </div>
+    const handleCardClick = (member) => {
+        navigate(`/faculty/${member.name}`, { state: { facultyMember: member } });
+    };
 
-                    </div>
-                </div>
-            </header>
+    return (
+        <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen">
+            
             <main>
-                <section className="max-w-6xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-2xl font-semibold text-gray-900">Faculty</h2>
-                    <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                        {facultyMembers.map((member) => (
-                            <div key={member.name}
-                                onClick={() => navigate(`/faculty/${member.name}`, { state: { facultyMember: member } })}
-                                className="bg-white overflow-hidden shadow rounded-lg">
-                                <div className="px-4 py-5 sm:p-6">
-                                    <img
-                                        className="h-10 w-10 rounded-full"
-                                        src={member.image}
-                                        alt={member.name}
-                                    />
-                                    <div className="mt-3">
-                                        <h3 className="text-lg font-medium text-gray-900">{member.name}</h3>
-                                        <p className="mt-1 text-sm text-gray-600">{member.title}</p>
-                                        <a href={`mailto:${member.email}`} className="mt-1 text-sm font-medium text-teal-600 hover:text-teal-500">{member.email}</a>
+                <section className="max-w-6xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+                    {/* Page Header */}
+                    <div className="mb-10 ">
+                        <h2 className="text-4xl font-bold text-gray-900 mb-3">Our Faculty</h2>
+                        {/*<div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-blue-500 mx-auto mb-4"></div>
+                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                            Meet our dedicated team of nursing educators committed to excellence in healthcare education
+                        </p> */}
+                    </div>
+                    
+                    {/* Faculty Grid */}
+                    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                        {facultyMembers.map((member, index) => (
+                            <div 
+                                key={index}
+                                onClick={() => handleCardClick(member)}
+                                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group border border-gray-100 hover:border-teal-200 transform hover:-translate-y-1"
+                            >
+                                {/* Image Section */}
+                                <div className="relative h-48 bg-gradient-to-br from-teal-50 to-blue-50 overflow-hidden">
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                            <img
+                                                className="w-full h-full object-cover"
+                                                src={member.image}
+                                                alt={member.name}
+                                            />
+                                        </div>
                                     </div>
+                                </div>
+                                
+                                {/* Content Section */}
+                                <div className="p-6">
+                                    <h3 className="text-xl font-bold text-gray-900 text-center mb-2 group-hover:text-teal-600 transition-colors">
+                                        {member.name}
+                                    </h3>
+                                    
+                                    <div className="flex items-center justify-center mb-4">
+                                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-teal-100 text-teal-800">
+                                            {member.title.split('•')[0].trim()}
+                                        </span>
+                                    </div>
+                                    
+                                    <p className="text-sm text-gray-600 text-center mb-4">
+                                        {member.title.split('•')[1]?.trim() || 'Nursing Education'}
+                                    </p>
+                                    
+                                    <p className="text-sm text-gray-700 line-clamp-3 mb-5 text-center">
+                                        {member.bio}
+                                    </p>
+                                    
+                                    {/* Email Section */}
+                                    {member.email && (
+                                        <div className="pt-4 border-t border-gray-100">
+                                            <a 
+                                                href={`mailto:${member.email}`}
+                                                onClick={(e) => e.stopPropagation()}
+                                                className="flex items-center justify-center text-sm text-teal-600 hover:text-teal-700 font-medium transition-colors"
+                                            >
+                                                <Mail className="h-4 w-4 mr-2 flex-shrink-0" />
+                                                <span className="truncate">{member.email}</span>
+                                            </a>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         ))}
