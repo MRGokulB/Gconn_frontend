@@ -1,7 +1,7 @@
 // src/Pages/Faculty.jsx
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { Menu, Mail, User } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import NangraleImg from '../assets/images/Faculty/Nangrale B B.jpg';
 import AnsariImg from '../assets/images/Faculty/Ansari.jpg';
 import ChakreImg from '../assets/images/Faculty/Chakre B P.jpg';
@@ -11,7 +11,7 @@ import MadleImg from '../assets/images/Faculty/Madle P A.jpg';
 import MohiteImg from '../assets/images/Faculty/Mohite.jpeg';
 import PalwadeImg from '../assets/images/Faculty/Palwade R V.jpg';
 import ShaikhImg from '../assets/images/Faculty/Shaikh.jpg';
-import MahapureImg  from '../assets/images/Faculty/Mahapure Shreenivas.jpg';
+import MahapureImg from '../assets/images/Faculty/Mahapure Shreenivas.jpg';
 import MaskeImg from '../assets/images/Faculty/Maske Shreedevi.jpeg';
 import RathodImg from '../assets/images/Faculty/Rathod Sushil.jpg';
 import KendreImg from '../assets/images/Faculty/Kendre S.jpg';
@@ -136,89 +136,77 @@ const staticFacultyMembers = [
 
 const FacultyPage = () => {
     const navigate = useNavigate();
-    const [facultyMembers, setFacultyMembers] = useState(staticFacultyMembers);
-
-    useEffect(() => {
-        // Future API integration placeholder
-    }, []);
+    const [facultyMembers] = useState(staticFacultyMembers);
 
     const handleCardClick = (member) => {
         navigate(`/faculty/${member.name}`, { state: { facultyMember: member } });
     };
 
     return (
-        <div className="bg-gradient-to-b from-gray-50 to-white min-h-screen">
-            
-            <main>
-                <section className="max-w-6xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
-                    {/* Page Header */}
-                    <div className="mb-10 ">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-3">Our Faculty</h2>
-                        {/*<div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-blue-500 mx-auto mb-4"></div>
-                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Meet our dedicated team of nursing educators committed to excellence in healthcare education
-                        </p> */}
-                    </div>
-                    
-                    {/* Faculty Grid */}
-                    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                        {facultyMembers.map((member, index) => (
-                            <div 
-                                key={index}
-                                onClick={() => handleCardClick(member)}
-                                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer group border border-gray-100 hover:border-teal-200 transform hover:-translate-y-1"
-                            >
-                                {/* Image Section */}
-                                <div className="relative h-48 bg-gradient-to-br from-teal-50 to-blue-50 overflow-hidden">
-                                    <div className="absolute inset-0 flex items-center justify-center">
-                                        <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                            <img
-                                                className="w-full h-full object-cover"
-                                                src={member.image}
-                                                alt={member.name}
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                {/* Content Section */}
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold text-gray-900 text-center mb-2 group-hover:text-teal-600 transition-colors">
-                                        {member.name}
-                                    </h3>
-                                    
-                                    <div className="flex items-center justify-center mb-4">
-                                        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-teal-100 text-teal-800">
-                                            {member.title.split('•')[0].trim()}
-                                        </span>
-                                    </div>
-                                    
-                                    <p className="text-sm text-gray-600 text-center mb-4">
-                                        {member.title.split('•')[1]?.trim() || 'Nursing Education'}
-                                    </p>
-                                    
-                                    <p className="text-sm text-gray-700 line-clamp-3 mb-5 text-center">
-                                        {member.bio}
-                                    </p>
-                                    
-                                    {/* Email Section */}
-                                    {member.email && (
-                                        <div className="pt-4 border-t border-gray-100">
-                                            <a 
-                                                href={`mailto:${member.email}`}
-                                                onClick={(e) => e.stopPropagation()}
-                                                className="flex items-center justify-center text-sm text-teal-600 hover:text-teal-700 font-medium transition-colors"
-                                            >
-                                                <Mail className="h-4 w-4 mr-2 flex-shrink-0" />
-                                                <span className="truncate">{member.email}</span>
-                                            </a>
-                                        </div>
-                                    )}
+        <div className="min-h-screen bg-white">
+            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                {/* Page Header */}
+                <div className="mb-12">
+                    <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">COLLEGE FACULTIES</h1>
+                    <div className="w-20 h-1 bg-teal-600"></div>
+                </div>
+                
+                {/* Faculty Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    {facultyMembers.map((member, index) => (
+                        <div 
+                            key={index}
+                            onClick={() => handleCardClick(member)}
+                            className="bg-white rounded-lg border border-gray-200 overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                        >
+                            {/* Image Container */}
+                            <div className="relative h-48 sm:h-56 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+                                <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                                    <img
+                                        className="w-full h-full object-cover"
+                                        src={member.image}
+                                        alt={member.name}
+                                    />
                                 </div>
                             </div>
-                        ))}
-                    </div>
-                </section>
+                            
+                            {/* Content */}
+                            <div className="p-5 sm:p-6">
+                                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 text-center mb-2">
+                                    {member.name}
+                                </h3>
+                                
+                                <div className="flex items-center justify-center mb-3">
+                                    <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-teal-100 text-teal-800">
+                                        {member.title.split('•')[0].trim()}
+                                    </span>
+                                </div>
+                                
+                                <p className="text-sm text-gray-600 text-center mb-4">
+                                    {member.title.split('•')[1]?.trim() || 'Nursing Education'}
+                                </p>
+                                
+                                <p className="text-sm text-gray-700 line-clamp-3 text-center mb-4">
+                                    {member.bio}
+                                </p>
+                                
+                                {/* Email */}
+                                {member.email && (
+                                    <div className="pt-4 border-t border-gray-100">
+                                        <a 
+                                            href={`mailto:${member.email}`}
+                                            onClick={(e) => e.stopPropagation()}
+                                            className="flex items-center justify-center text-sm text-teal-600 hover:text-teal-700 font-medium transition-colors"
+                                        >
+                                            <Mail className="h-4 w-4 mr-2 flex-shrink-0" />
+                                            <span className="truncate">{member.email}</span>
+                                        </a>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </main>
         </div>
     );

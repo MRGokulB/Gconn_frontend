@@ -63,25 +63,21 @@ const AnnexuresPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="max-w-3xl">
+
+      {/* Filter & Search Section */}
+      <div className="bg-white border-b border-gray-200 sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-3xl py-4">
             <h1 className="text-4xl font-bold text-gray-900 tracking-tight mb-4">
               Annexures & Documents
             </h1>
             <p className="text-lg text-gray-600 leading-relaxed">
               Access official institutional records, compliance documents, and administrative 
-              annexures organized by academic year.
+              annexures .
             </p>
           </div>
-        </div>
-      </div>
-
-      {/* Filter & Search Section */}
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row gap-4">
+          
             {/* Year Filter */}
             <div className="relative">
               <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4 pointer-events-none" />
