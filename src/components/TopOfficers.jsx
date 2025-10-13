@@ -1,11 +1,11 @@
 import React from "react";
 
-import NangraleImg from '../assets/images/Faculty/Nangrale.jpeg';
-import ChakreImg from '../assets/images/Faculty/Chakre.jpg';
-import ChandbibiImg from '../assets/images/Faculty/Chandbibi.jpeg';
+import NangraleImg from '../assets/images/Faculty/Nangrale B B.jpg';
+import ChakreImg from '../assets/images/Faculty/Chakre B P.jpg';
+import ChandbibiImg from '../assets/images/Faculty/Pathan C H.jpg';
 import ShaikhImg from '../assets/images/Faculty/Shaikh.jpg';
-import DeshmaneImg from '../assets/images/Faculty/Deshmane.jpg';
-import MadleImg from '../assets/images/Faculty/Madle.jpg';
+import DeshmaneImg from '../assets/images/Faculty/Deshmane U B.jpg';
+import MadleImg from '../assets/images/Faculty/Madle P A.jpg';
 
 const officers = [
   {
