@@ -1,6 +1,6 @@
 import React from "react";
 
-const LifeAtIITBombay = () => {
+const LifeAtGNC = () => {
   return (
     <section className="bg-blue-100 py-12 text-center">
       <h2 className="text-3xl font-semibold mb-4">Life at GCN, VISHNUPURI, NANDED</h2>
@@ -11,4 +11,4 @@ const LifeAtIITBombay = () => {
   );
 };
 
-export default LifeAtIITBombay;
+export default LifeAtGNC;
