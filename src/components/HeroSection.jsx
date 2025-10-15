@@ -14,10 +14,10 @@ const HeroSection = () => {
 
   const menuItems = [
     { title: "About", info: "Information about the institute." },
-    { title: "Divisions", info: "Various divisions and departments." },
+    // { title: "Divisions", info: "Various divisions and departments." },
     { title: "Academics", info: "Courses, programs, and academics." },
     { title: "Admissions", info: "Admission process and criteria." },
-    { title: "Research & Industry", info: "Research activities and industry collaborations." },
+    { title: "Research", info: "Research activities and industry collaborations." },
     { title: "Career", info: "Career opportunities and placements." },
     { title: "Resources", info: "Student resources and facilities." },
     { title: "Contact Us", info: "Contact details and location." },

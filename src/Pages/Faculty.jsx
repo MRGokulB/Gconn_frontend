@@ -1,12 +1,11 @@
-// src/Pages/Faculty.jsx
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Mail } from 'lucide-react';
 import NangraleImg from '../assets/images/Faculty/Nangrale B B.jpg';
-import AnsariImg from '../assets/images/Faculty/Ansari.jpg';
-import ChakreImg from '../assets/images/Faculty/Chakre B P.jpg';
+import AnsariImg from '../assets/images/Faculty/Ansari.jpg';//
+import ChakreImg from '../assets/images/Faculty/Chakre.jpg';//
 import ChandbibiImg from '../assets/images/Faculty/Pathan C H.jpg';
-import DeshmaneImg from '../assets/images/Faculty/Deshmane U B.jpg';
+import DeshmaneImg from '../assets/images/Faculty/Deshmane.jpg';
 import MadleImg from '../assets/images/Faculty/Madle P A.jpg';
 import MohiteImg from '../assets/images/Faculty/Mohite.jpeg';
 import PalwadeImg from '../assets/images/Faculty/Palwade R V.jpg';
@@ -34,13 +33,13 @@ const staticFacultyMembers = [
         email: 'bpchakre@gmail.com',
         bio: `With a passion for mental health nursing, I dedicate myself to nurturing both the academic and emotional well-being of our students. Our college provides a supportive learning environment where critical thinking and empathy are equally valued. My aim is to inspire students to become leaders in mental health care and advocates for those struggling with psychological difficulties. Together, we are building a campus that reduces stigma and promotes holistic care.`
     },
-    {
-        name: 'Ms. Sukumar Gude',
-        image: '/assets/images/t3.jpg',
-        title: 'Tutor • Community Health',
-        email: 'gudesr16@gmail.com',
-        bio: `Community health is not only my profession—it's my calling. I am proud to be part of an institution that sees nursing as a tool for positive change. Here, I guide my students to engage with local populations, understand their needs, and apply evidence-based solutions. It is my responsibility to foster a new generation of community health nurses who will serve with commitment and integrity.`
-    },
+    // {
+    //     name: 'Ms. Sukumar Gude',
+    //     image: '/assets/images/t3.jpg',
+    //     title: 'Tutor • Community Health',
+    //     email: 'gudesr16@gmail.com',
+    //     bio: `Community health is not only my profession—it's my calling. I am proud to be part of an institution that sees nursing as a tool for positive change. Here, I guide my students to engage with local populations, understand their needs, and apply evidence-based solutions. It is my responsibility to foster a new generation of community health nurses who will serve with commitment and integrity.`
+    // },
     {
         name: 'Ms. Chandbibi Pathan',
         image: ChandbibiImg,
@@ -55,13 +54,13 @@ const staticFacultyMembers = [
         email: 'ss13111972@gmail.com',
         bio: `I have dedicated my career to public health and preventive care, and our college's vision resonates deeply with me. Every day, I endeavor to make learning practical and meaningful, so my students become caring, action-driven health professionals. I believe our collective efforts will continue to uplift communities, address health disparities, and create a healthier society for all.`
     },
-    {
-        name: 'Ms. Sunita Giri',
-        image: '/assets/images/t4.jpg',
-        title: 'Tutor • Nursing Foundation',
-        email: 'sggirir27m@gmail.com',
-        bio: `At the core of nursing lies a blend of knowledge, skill, and compassion. I am committed to helping each student master the fundamentals that define excellent nursing practice. I value the college's emphasis on discipline and modern education and believe that every student should take pride in their journey toward becoming a skilled and ethical caregiver.`
-    },
+    // {
+    //     name: 'Ms. Sunita Giri',
+    //     image: '/assets/images/t4.jpg',
+    //     title: 'Tutor • Nursing Foundation',
+    //     email: 'sggirir27m@gmail.com',
+    //     bio: `At the core of nursing lies a blend of knowledge, skill, and compassion. I am committed to helping each student master the fundamentals that define excellent nursing practice. I value the college's emphasis on discipline and modern education and believe that every student should take pride in their journey toward becoming a skilled and ethical caregiver.`
+    // },
     {
         name: 'Ms. Unita Deshmane',
         image: DeshmaneImg,

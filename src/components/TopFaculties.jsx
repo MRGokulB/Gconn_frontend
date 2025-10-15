@@ -49,7 +49,7 @@ export default function TopOfficers() {
       {/* Title */}
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 uppercase tracking-wide">
-          Top Officers of the University
+          Top Faculties of the University
         </h2>
         <div className="mt-2 w-24 h-1 bg-yellow-500 mx-auto"></div>
       </div>
