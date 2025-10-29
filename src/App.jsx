@@ -37,7 +37,6 @@ function App() {
             <>
               <HeroSection />
               <TopOfficers />
-
               {/* Sections with IDs for smooth scroll */}
               <section id="about">
                 <About />
@@ -66,7 +65,7 @@ function App() {
             </>
           }
         />
-
+        <Route path="/events" element={<Events />} />
         {/* Faculty Pages */}
         <Route path="/faculty" element={<FacultyPage />} />
         <Route path="/faculty/:id" element={<FacultyDetail />} />
