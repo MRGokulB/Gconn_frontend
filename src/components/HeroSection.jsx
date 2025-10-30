@@ -37,7 +37,7 @@ const HeroSection = () => {
   const getId = (title) => title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '');
 
   return (
-    <section className="relative w-full h-[550px] overflow-hidden">
+    <section className="relative w-full h-[550px] mt-4 overflow-hidden">
       {/* Images */}
       {images.map((img, index) => (
         <div
