@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, Building2, Wifi, Users, Microscope } from "lucide-react";
 
-import BoysRoom from "../assets/Facalty_Images/RoomBoys.jpg";
-import GirlsRoom from "../assets/Facalty_Images/RoomGirls.jpg";
-import CommunityHealth from "../assets/Facalty_Images/CommunityHealthNursing.jpg";
-import ComputerLab from "../assets/Facalty_Images/ComputerLab.jpg";
-import Fundamental from "../assets/Facalty_Images/FundamentalNursing.jpg";
-import Hostel from "../assets/Facalty_Images/HostelBuildig.jpg";
-import Library from "../assets/Facalty_Images/Library.jpg";
-import Nutrition from "../assets/Facalty_Images/NutritionLab.jpg";
-import ObGyLab from "../assets/Facalty_Images/ObGyLab.jpg";
-import Preclinical from "../assets/Facalty_Images/PreclinicalScienceLab.jpg";
-import ReadingHall from "../assets/Facalty_Images/ReadingHall.jpg";
+const BoysRoom = "/assets/Facalty_Images/RoomBoys.jpg";
+const GirlsRoom = "/assets/Facalty_Images/RoomGirls.jpg";
+const CommunityHealth = "/assets/Facalty_Images/CommunityHealthNursing.JPG";
+const ComputerLab = "/assets/Facalty_Images/ComputerLab.JPG";
+const Fundamental = "/assets/Facalty_Images/FundamentalNursing.JPG";
+const Hostel = "/assets/Facalty_Images/HostelBuildig.jpg";
+const Library = "/assets/Facalty_Images/Library.JPG";
+const Nutrition = "/assets/Facalty_Images/NutritionLab.JPG";
+const ObGyLab = "/assets/Facalty_Images/ObGyLab.JPG";
+const Preclinical = "/assets/Facalty_Images/PreclinicalScienceLab.JPG";
+const ReadingHall = "/assets/Facalty_Images/ReadingHall.JPG";
 
 const Resources = () => {
   const data = [

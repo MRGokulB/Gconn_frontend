@@ -1,25 +1,82 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { FileText, Search, Download, Eye, Calendar, Filter } from 'lucide-react';
 
-// Vite glob import for all yearwise PDFs
-const localPdfFiles = import.meta.glob(
-  '../assets/Annexures All/*/*.pdf',
-  { query: '?url', import: 'default', eager: true }
-);
+const ANNEXURE_BASE = "/assets/Annexures All";
+const YEAR_FILES = {
+  "Annexures 2022-23": [
+    "ANNEXURE I.pdf",
+    "ANNEXURE II.pdf",
+    "ANNEXURE III.pdf",
+    "ANNEXURE IV.pdf",
+    "ANNEXURE V.pdf",
+    "ANNEXURE VI.pdf",
+    "ANNEXURE VII.pdf",
+    "ANNEXURE VIII.pdf",
+    "ANNEXURE X.pdf",
+    "ANNEXURE XIII.pdf",
+    "ANNEXURE-IX.pdf",
+    "ANNEXURE-XI.pdf",
+  ],
+  "Annexures 2023-24": [
+    "ANNEXURE I.pdf",
+    "ANNEXURE II.pdf",
+    "ANNEXURE III.pdf",
+    "ANNEXURE IV.pdf",
+    "ANNEXURE IX.pdf",
+    "ANNEXURE V.pdf",
+    "ANNEXURE VI.pdf",
+    "ANNEXURE VII.pdf",
+    "ANNEXURE VIII.pdf",
+    "ANNEXURE X.pdf",
+    "ANNEXURE XI.pdf",
+    "ANNEXURE XIII.pdf",
+  ],
+  "Annexures 2024-25": [
+    "ANNEXURE-I.pdf",
+    "ANNEXURE-II.pdf",
+    "ANNEXURE-III.pdf",
+    "ANNEXURE-IV.pdf",
+    "ANNEXURE-IX.pdf",
+    "ANNEXURE-V.pdf",
+    "ANNEXURE-VI.pdf",
+    "ANNEXURE-VII.pdf",
+    "ANNEXURE-VIII.pdf",
+    "ANNEXURE-X.pdf",
+    "ANNEXURE-XI.pdf",
+    "ANNEXURE-XII.pdf",
+    "ANNEXURE-XIII.pdf",
+    "BOND (1).pdf",
+    "BOND.pdf",
+  ],
+  "Annexures 2025-26": [
+    "1 ANNEXURE I.pdf",
+    "2 ANNEXURE II.pdf",
+    "3 ANNEXURE III.pdf",
+    "4 ANNEXURE IV.pdf",
+    "5 ANNEXURE V.pdf",
+    "6 ANNEXURE VI.pdf",
+    "8 ANNEXURE VIII.pdf",
+    "9 ANNEXURE IX.pdf",
+    "ANNEXURE X.pdf",
+    "ANNEXURE XI.pdf",
+    "ANNEXURE XII.pdf",
+    "ANNEXURE XIII (A).pdf",
+    "ANNEXURE XIII (B).pdf",
+    "ANNEXURE XIII.pdf",
+    "ANNEXURE XIV.pdf",
+    "ANNEXURE XV.pdf",
+    "ANNEXURE XVI.pdf",
+  ],
+};
 
 function getYearwiseAnnexures() {
   const yearsMap = {};
-  Object.entries(localPdfFiles).forEach(([path, fileUrl]) => {
-    const parts = path.split('/');
-    const year = parts[parts.length - 2];
-    const fileName = parts[parts.length - 1];
-    if (!yearsMap[year]) yearsMap[year] = [];
-    yearsMap[year].push({
-      title: fileName.replace(/_/g, ' ').replace(/\.pdf$/i, ''),
-      fileUrl,
-    });
+  Object.entries(YEAR_FILES).forEach(([year, files]) => {
+    yearsMap[year] = files.map((name) => ({
+      title: name.replace(/\.pdf$/i, ''),
+      fileUrl: `${ANNEXURE_BASE}/${year}/${name}`,
+    }));
   });
-  // Sort years descending
   return Object.fromEntries(
     Object.entries(yearsMap).sort((a, b) => b[0].localeCompare(a[0]))
   );
@@ -62,7 +119,7 @@ const AnnexuresPage = () => {
           Annexures & Documents
         </h1>
         <div className="w-24 h-1 bg-yellow-500 mx-auto   "></div>
-         
+
       </div>
 
       {/* Filter & Search Section — layout unchanged */}

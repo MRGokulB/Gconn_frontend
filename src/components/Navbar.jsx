@@ -3,8 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { FiPhone, FiSearch } from "react-icons/fi";
 import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import universityData from "../Data/universityData";
-import Logo from "../assets/images/Logo/CollegeLogo.png";
 
+const Logo = "/assets/images/Logo/CollegeLogo.png";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);

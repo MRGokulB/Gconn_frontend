@@ -2,35 +2,35 @@ import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 // Your existing imports
-import Cpd1 from "../assets/Events/Continuous Professional Development Program/CPDP1.jpeg";
-import Cpd2 from "../assets/Events/Continuous Professional Development Program/CPDP2.jpeg";
-import Cpd3 from "../assets/Events/Continuous Professional Development Program/CPDP3.jpeg";
-import Cpd4 from "../assets/Events/Continuous Professional Development Program/CPDP4.jpeg";
-import Cpd5 from "../assets/Events/Continuous Professional Development Program/CPDP5.jpeg";
-import Cpd6 from "../assets/Events/Continuous Professional Development Program/CPDP6.jpeg";
-import Cpd7 from "../assets/Events/Continuous Professional Development Program/CPDP7.jpeg";
-import Cpd8 from "../assets/Events/Continuous Professional Development Program/CPDP8.jpeg";
-import Cpd9 from "../assets/Events/Continuous Professional Development Program/CPDP9.jpeg";
-import Cpd10 from "../assets/Events/Continuous Professional Development Program/CPDP10.jpeg";
-import Cpd11 from "../assets/Events/Continuous Professional Development Program/CPDP11.jpeg";
-import Cpd12 from "../assets/Events/Continuous Professional Development Program/CPDP12.jpeg";
+const Cpd1 = "/assets/Events/Continuous Professional Development Program/CPDP1.jpeg";
+const Cpd2 = "/assets/Events/Continuous Professional Development Program/CPDP2.jpeg";
+const Cpd3 = "/assets/Events/Continuous Professional Development Program/CPDP3.jpeg";
+const Cpd4 = "/assets/Events/Continuous Professional Development Program/CPDP4.jpeg";
+const Cpd5 = "/assets/Events/Continuous Professional Development Program/CPDP5.jpeg";
+const Cpd6 = "/assets/Events/Continuous Professional Development Program/CPDP6.jpeg";
+const Cpd7 = "/assets/Events/Continuous Professional Development Program/CPDP7.jpeg";
+const Cpd8 = "/assets/Events/Continuous Professional Development Program/CPDP8.jpeg";
+const Cpd9 = "/assets/Events/Continuous Professional Development Program/CPDP9.jpeg";
+const Cpd10 = "/assets/Events/Continuous Professional Development Program/CPDP10.jpeg";
+const Cpd11 = "/assets/Events/Continuous Professional Development Program/CPDP11.jpeg";
+const Cpd12 = "/assets/Events/Continuous Professional Development Program/CPDP12.jpeg";
 
-import EDU1 from "../assets/Events/Educational Visits/RPH.jpeg";
-import EDU2 from "../assets/Events/Educational Visits/Visit to Biomedical Waste Treatment Plant.jpeg";
-import EDU3 from "../assets/Events/Educational Visits/Visit to Old age Home.jpeg";
-import EDU4 from "../assets/Events/Educational Visits/Visit to Old age Home1.jpeg";
-import EDU5 from "../assets/Events/Educational Visits/Visit to Sub Centre Kakandi.jpeg";
+const EDU1 = "/assets/Events/Educational Visits/RPH.jpeg";
+const EDU2 = "/assets/Events/Educational Visits/Visit to Biomedical Waste Treatment Plant.jpeg";
+const EDU3 = "/assets/Events/Educational Visits/Visit to Old age Home.jpeg";
+const EDU4 = "/assets/Events/Educational Visits/Visit to Old age Home1.jpeg";
+const EDU5 = "/assets/Events/Educational Visits/Visit to Sub Centre Kakandi.jpeg";
 
-import RMH1 from "../assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH1.jpeg";
-import RMH2 from "../assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH2.jpeg";
-import RMH3 from "../assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH3.jpeg";
-import RMH4 from "../assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH4.jpeg";
-import RMH5 from "../assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH5.jpeg";
-import RMH6 from "../assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH6.jpeg";
-import RMHV from "../assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMHV.mp4";
+const RMH1 = "/assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH1.jpeg";
+const RMH2 = "/assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH2.jpeg";
+const RMH3 = "/assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH3.jpeg";
+const RMH4 = "/assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH4.jpeg";
+const RMH5 = "/assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH5.jpeg";
+const RMH6 = "/assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH6.jpeg";
+const RMHV = "/assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMHV.mp4";
 
-import RolePlay from "../assets/Events/Role Play/PlayRole.mp4";
-import FireDrill from "../assets/Events/Fire Drill/Live Fire Drill - Situation ward fire.mp4";
+const RolePlay = "/assets/Events/Role Play/PlayRole.mp4";
+const FireDrill = "/assets/Events/Fire Drill/Live Fire Drill - Situation ward fire.mp4";
 
 const Events = () => {
   const events = [
