@@ -166,7 +166,7 @@ Medical facility in the campus, as well as beyond is provided by a 1080 bedded p
   const IconComponent = current.icon;
 
   return (
-    <div className="py-20 bg-white">
+    <div className="py-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
