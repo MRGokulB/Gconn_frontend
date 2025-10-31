@@ -4,9 +4,9 @@ import { Mail, BookOpen, GraduationCap, Heart } from 'lucide-react';
 
 const NangraleImg = "/assets/images/Faculty/Nangrale B B.jpg";
 const AnsariImg = "/assets/images/Faculty/Ansari.jpg";
-const ChakreImg = "/assets/images/Faculty/Chakre.jpg";
+const ChakreImg = "/assets/images/Faculty/ChakreBP.jpg";
 const ChandbibiImg = "/assets/images/Faculty/Pathan C H.jpg";
-const DeshmaneImg = "/assets/images/Faculty/Deshmane.jpg";
+const DeshmaneImg = "/assets/images/Faculty/Deshmane U B.jpg";
 const MadleImg = "/assets/images/Faculty/Madle P A.jpg";
 const MohiteImg = "/assets/images/Faculty/Mohite.jpeg";
 const PalwadeImg = "/assets/images/Faculty/Palwade R V.jpg";

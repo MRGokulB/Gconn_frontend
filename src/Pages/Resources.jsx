@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, Building2, Wifi, Users, Microscope } from "lucide-react";
+import { ChevronLeft, ChevronRight, Building2, Wifi, Users, Microscope, BookOpen } from "lucide-react";
 
 const BoysRoom = "/assets/Facalty_Images/RoomBoys.jpg";
 const GirlsRoom = "/assets/Facalty_Images/RoomGirls.jpg";
@@ -26,7 +26,7 @@ const Resources = () => {
       title: "Library",
       description: `The library is fully computerized with WiFi connection. Students can access PUBMED, MEDLINE etc. Adequate textbooks and journals in hard copies are catalogued. Students can access the central library for reference and research work.`,
       image: Library,
-      icon: Building2,
+      icon: BookOpen,
     },
     {
       title: "Boys Common Room",
@@ -89,7 +89,7 @@ const Resources = () => {
       description:
         "A peaceful study environment designed for students to read, revise, and prepare for examinations with minimal distractions.",
       image: ReadingHall,
-      icon: Building2,
+      icon: BookOpen,
     },
     {
       title: "General Facilities",
@@ -166,37 +166,37 @@ Medical facility in the campus, as well as beyond is provided by a 1080 bedded p
   const IconComponent = current.icon;
 
   return (
-    <div className="w-full bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-10">
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-wide mb-3">
-            Campus Facilities
-          </h1>
-          <div className="w-24 h-1 bg-yellow-500 mx-auto mb-4"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+            Campus Facilities & Resources
+          </h2>
+          <div className="w-24 h-1 bg-amber-500 mx-auto mb-6"></div>
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
             Explore our state-of-the-art facilities designed to provide comprehensive nursing education and training
           </p>
         </div>
 
         {/* Main Content Card */}
-        <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
           <div className="flex flex-col lg:flex-row">
             {/* Left Text Section */}
             <div className={`lg:w-1/2 p-6 sm:p-8 lg:p-10 ${!current.image ? 'lg:w-full flex items-center justify-center' : ''}`}>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 bg-indigo-50 rounded-lg flex items-center justify-center">
-                    <IconComponent className="h-6 w-6 text-indigo-600" />
+                  <div className="flex-shrink-0 w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center">
+                    <IconComponent className="h-6 w-6 text-blue-600" />
                   </div>
                   <div className="flex-1">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-3">
                       {current.title}
-                    </h2> 
+                    </h3> 
                   </div>
                 </div>
                 
-                <p className="text-base sm:text-lg text-gray-700 leading-relaxed whitespace-pre-line">
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed whitespace-pre-line">
                   {current.description}
                 </p>
               </div>
@@ -204,27 +204,27 @@ Medical facility in the campus, as well as beyond is provided by a 1080 bedded p
 
             {/* Right Image Section */}
             {current.image && (
-              <div className="lg:w-1/2 relative bg-gray-100">
+              <div className="lg:w-1/2 relative bg-slate-100">
                 <div className="h-[400px] lg:h-full relative">
                   <img
                     src={current.image}
                     alt={current.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent" />
                 </div>
               </div>
             )}
           </div>
 
           {/* Navigation Controls */}
-          <div className="border-t border-gray-200 bg-gray-50 px-6 py-4 flex items-center justify-between">
+          <div className="border-t border-slate-200 bg-slate-50 px-6 py-4 flex items-center justify-between">
             <button
               onClick={handlePrev}
-              className="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:border-indigo-300 transition-all shadow-sm"
+              className="inline-flex items-center px-4 py-2 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 hover:border-blue-300 transition-all shadow-sm"
             >
-              <ChevronLeft className="h-5 w-5 text-gray-700 mr-2" />
-              <span className="hidden sm:inline text-sm font-medium text-gray-700">Previous</span>
+              <ChevronLeft className="h-5 w-5 text-slate-700 mr-2" />
+              <span className="hidden sm:inline text-sm font-medium text-slate-700">Previous</span>
             </button>
 
             <div className="flex items-center gap-2">
@@ -236,8 +236,8 @@ Medical facility in the campus, as well as beyond is provided by a 1080 bedded p
                     onClick={() => setCurrentIndex(actualIndex)}
                     className={`h-2 rounded-full transition-all ${
                       actualIndex === currentIndex
-                        ? 'w-8 bg-indigo-600'
-                        : 'w-2 bg-gray-300 hover:bg-gray-400'
+                        ? 'w-8 bg-blue-600'
+                        : 'w-2 bg-slate-300 hover:bg-slate-400'
                     }`}
                   />
                 );
@@ -246,7 +246,7 @@ Medical facility in the campus, as well as beyond is provided by a 1080 bedded p
 
             <button
               onClick={handleNext}
-              className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all shadow-sm"
+              className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all shadow-sm"
             >
               <span className="hidden sm:inline text-sm font-medium mr-2">Next</span>
               <ChevronRight className="h-5 w-5" />
@@ -262,8 +262,8 @@ Medical facility in the campus, as well as beyond is provided by a 1080 bedded p
               onClick={() => setCurrentIndex(idx)}
               className={`p-3 rounded-lg text-sm font-medium transition-all ${
                 idx === currentIndex
-                  ? 'bg-indigo-600 text-white shadow-md'
-                  : 'bg-white text-gray-700 border border-gray-200 hover:border-indigo-300 hover:bg-indigo-50'
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'bg-white text-slate-700 border border-slate-200 hover:border-blue-300 hover:bg-blue-50'
               }`}
             >
               {item.title}
