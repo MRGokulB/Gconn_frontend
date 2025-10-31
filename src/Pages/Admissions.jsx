@@ -170,10 +170,10 @@ const Admissions = () => {
               </div>
               <div className="flex-1">
                 <p className="text-base sm:text-lg text-gray-700 italic leading-relaxed mb-3">
-                  "The quality of a leader is reflected in the standards that they set for themselves."
+  "Service to humanity is service to God. In nursing, we have the privilege to serve those in their most vulnerable moments."
                 </p>
                 <p className="text-sm sm:text-base text-gray-600 font-medium">
-                  — Ray Kroc
+  — Mahatma Gandhi (Adapted)
                 </p>
               </div>
             </div>
