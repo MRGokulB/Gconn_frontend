@@ -11,9 +11,7 @@ const Header = () => {
     { name: "Annexure", path: "/annexure" },
     { name: "Events", path: "/events" },
     { name: "Students", path: "#" },
-    { name: "Alumni", path: "#" },
-    { name: "CSR", path: "#" },
-    { name: "Vendors", path: "#" },
+    { name: "Alumni", path: "#" }, 
   ];
 
   return (
@@ -92,38 +90,25 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="xl:hidden border-t border-gray-200 py-4 mb-2">
-            <nav className="flex flex-col gap-2">
-              {navLinks.map((link) => {
-                const isInternal = link.path.startsWith("/");
-
-                const linkClasses = "px-4 py-3 text-sm font-medium rounded-lg transition-colors text-gray-700 hover:bg-indigo-50 hover:text-indigo-600";
-
-                return isInternal ? (
-                  <Link 
-                    key={link.name} 
-                    to={link.path}
-                    className={linkClasses}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                ) : (
+            <div className="xl:hidden border-t border-gray-200">
+              <nav className="py-2">
+                {navLinks.map((link, index) => (
                   <a 
                     key={link.name} 
                     href={link.path}
-                    className={linkClasses}
                     onClick={() => setMobileMenuOpen(false)}
+                    className="block px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-indigo-600 transition-colors border-b border-gray-100 last:border-b-0"
                   >
-                    {link.name}
+                    <div className="flex items-center justify-between">
+                      <span>{link.name}</span>
+                       
+                    </div>
                   </a>
-                );
-              })}
-            </nav>
-          </div>
-        )}
+                ))}
+              </nav>
+            </div>
+          )}
       </div>
     </header>
   );

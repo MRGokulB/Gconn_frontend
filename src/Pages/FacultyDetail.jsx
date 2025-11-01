@@ -28,7 +28,10 @@ const FacultyDetail = () => {
       </div>
     );
   }
-  
+
+  // bg-teal-100 text-teal-800   border border-teal-200 shadow-sm
+  // bg-blue-50 text-blue-800 border border-blue-200 shadow-sm
+
   const getTitleIcon = (title) => {
     const titleLower = title.toLowerCase();
     if (titleLower.includes('principal')) {
@@ -69,20 +72,20 @@ const FacultyDetail = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              
+
               {/* Contact Card */}
               {facultyMember.email && (
-                <div className="bg-white rounded-xl p-5 shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
-                  <h3 className="text-sm font-semibold text-gray-900 mb-3 flex items-center">
+                <div className="bg-blue-50 text-blue-800 border border-blue-200 rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow">
+                  <h3 className="text-sm font-semibold text-gray-900  flex items-center">
                     <Mail className="h-4 w-4 mr-2 text-teal-600" />
-                    Contact Information
-                  </h3>
-                  <a 
+                    <a
                     href={`mailto:${facultyMember.email}`}
                     className="text-sm text-teal-600 hover:text-teal-700 transition-colors break-all font-medium"
                   >
                     {facultyMember.email}
-                  </a>
+                  </a> 
+                  </h3>
+        
                 </div>
               )}
             </div>
@@ -91,18 +94,18 @@ const FacultyDetail = () => {
             <div className="lg:col-span-2 shadow-sm rounded-lg bg-white p-6 sm:p-8">
               {/* Name and Title */}
               <div className="mb-6 pb-6 border-b border-gray-200">
-                <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                <h1 className="text-3xl sm:text-4xl font-sans font-semibold text-gray-900 mb-4">
                   {facultyMember.name}
                 </h1>
-                
+
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <span
-  className="inline-flex items-center px-3 sm:px-4 py-1.5 rounded-lg   text-xs sm:text-sm font-semibold bg-teal-100 text-teal-800   border border-teal-200 shadow-sm   transition">
-  {getTitleIcon(facultyMember.title)}
-  {facultyMember.title.split('•')[0].trim()}
-</span>
+                    className="inline-flex items-center px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold bg-blue-50 text-blue-800 border border-blue-200 shadow-sm   transition">
+                    {getTitleIcon(facultyMember.title)}
+                    {facultyMember.title.split('•')[0].trim()}
+                  </span>
 
-                  <span className="inline-flex items-center px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm font-medium bg-blue-50 text-blue-800 border border-blue-200 shadow-sm">
+                  <span className="inline-flex items-center px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold bg-teal-50 text-teal-800   border border-teal-200 shadow-sm ">
                     {department}
                   </span>
                 </div>
@@ -110,14 +113,14 @@ const FacultyDetail = () => {
 
               {/* Bio Section */}
               <div>
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                  <div className="w-1 h-6 bg-teal-500 mr-3 rounded-full"></div>
+                <h2 className="text-xl sm:text-2xl font-sans font-semibold  mb-4 flex items-center">
+                  <div className="w-1 h-6 bg-blue-500 mr-3 rounded-full"></div>
                   About
                 </h2>
                 <div className="prose max-w-none">
                   {facultyMember.bio.split('\n').map((paragraph, index) => (
                     paragraph.trim() && (
-                      <p key={index} className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4 last:mb-0 text-justify">
+                      <p key={index} className="text-sm sm:text-base font-sans text-gray-700 leading-relaxed mb-4 last:mb-0 text-justify">
                         {paragraph.trim()}
                       </p>
                     )
@@ -129,7 +132,7 @@ const FacultyDetail = () => {
         </div>
       </div>
     </div>
-);
+  );
 };
 
 export default FacultyDetail;
