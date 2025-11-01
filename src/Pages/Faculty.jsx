@@ -208,13 +208,13 @@ const FacultyPage = () => {
                                 </h3>
 
                                 <div className="flex items-center justify-center mb-3">
-                                    <span className="inline-flex items-center px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold     bg-teal-100 text-teal-800 border border-teal-200 shadow-sm   transition">
+                                    <span className="inline-flex items-center px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold bg-blue-50 text-blue-800 border border-blue-200 shadow-sm   transition">
                                         {getTitleIcon(member.title)}
                                         {member.title.split('•')[0].trim()}
                                     </span>
                                 </div>
 
-                                <p className="text-sm text-gray-600 text-center mb-4">
+                                <p className="text-sm text-gray-600  font-medium text-center mb-4">
                                     {member.title.split('•')[1]?.trim() || 'Nursing Education'}
                                 </p>
 
@@ -226,7 +226,7 @@ const FacultyPage = () => {
                                     <a
                                         href={`mailto:${member.email}`}
                                         onClick={(e) => e.stopPropagation()}
-                                        className="flex items-center justify-center text-sm text-indigo-600 hover:text-indigo-700 font-medium transition-colors group/email"
+                                        className="flex items-center justify-center text-sm text-blue-600 hover:text-indigo-700 font-medium transition-colors group/email"
                                     >
                                         <Mail className="h-4 w-4 mr-2 flex-shrink-0 group-hover/email:scale-110 transition-transform" />
                                         <span className="truncate">{member.email}</span>
@@ -237,8 +237,6 @@ const FacultyPage = () => {
                                         <span>Contact information unavailable</span>
                                     </div>
                                 )}
-
-
                             </div>
                         </div>
                     ))}

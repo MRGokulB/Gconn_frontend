@@ -11,10 +11,10 @@ const HeroSection = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const menuItems = [
     { title: "About", info: "Learn about our institution and values" },
-    // { title: "Divisions", info: "Various divisions and departments." },
     { title: "Academics", info: "B.Sc. Nursing programs and curriculum" },
     { title: "Admissions", info: "Eligibility criteria and admission process" },
     { title: "Research", info: "Innovation and research initiatives" },
@@ -34,7 +34,7 @@ const HeroSection = () => {
   const getId = (title) => title.toLowerCase().replace(/\s+/g, '-').replace(/&/g, '');
 
   return (
-    <section className="relative  w-full h-[600px] mt-4 overflow-hidden">
+    <section className="relative w-full h-[600px] mt-4 overflow-hidden">
       {/* Images */}
       {images.map((img, index) => (
         <div
@@ -80,8 +80,8 @@ const HeroSection = () => {
         </div>
       ))}
 
-      {/* Top navigation menu */}
-      <div className="absolute top-6 left-[2%] right-[2%] z-20">
+      {/* Desktop navigation menu */}
+      <div className="hidden md:block absolute top-6 left-[2%] right-[2%] z-20">
         <div className="flex justify-center">
           <div className="bg-white/95 backdrop-blur-md rounded-full shadow-lg px-6 py-3">
             <div className="flex flex-wrap justify-center gap-6">
@@ -118,6 +118,51 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Mobile menu button */}
+      <button
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        className="md:hidden absolute top-6 right-6 z-50 bg-white/95 backdrop-blur-md rounded-lg p-2 shadow-lg hover:bg-white transition-colors"
+        aria-label="Toggle menu"
+      >
+        {mobileMenuOpen ? (
+          <svg className="h-6 w-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        ) : (
+          <svg className="h-6 w-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        )}
+      </button>
+
+      {/* Mobile menu dropdown */}
+      {mobileMenuOpen && (
+        <div className="md:hidden absolute top-20 left-[2%] right-[2%] z-40 bg-white/98 backdrop-blur-md rounded-2xl shadow-2xl border border-slate-200">
+          <div className="p-4">
+            <nav className="flex flex-col gap-1">
+              {menuItems.map((item, index) => (
+                <div
+                  key={index}
+                  onClick={() => {
+                    const section = document.getElementById(getId(item.title));
+                    if (section) {
+                      section.scrollIntoView({ behavior: "smooth" });
+                      setMobileMenuOpen(false);
+                    }
+                  }}
+                  className="cursor-pointer group px-4 py-3 rounded-lg hover:bg-emerald-50 transition-colors"
+                >
+                  <div className="text-slate-700 group-hover:text-emerald-600 font-medium transition-colors">
+                    {item.title}
+                  </div>
+                  <p className="text-xs text-slate-500 mt-0.5">{item.info}</p>
+                </div>
+              ))}
+            </nav>
+          </div>
+        </div>
+      )}
 
       {/* Slide indicators */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
