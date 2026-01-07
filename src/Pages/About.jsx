@@ -47,7 +47,7 @@ const About = () => {
           </h2>
           <div className="w-24 h-1 bg-yellow-500 mx-auto mb-4"></div>
           <h3 className="text-lg sm:text-xl font-semibold text-gray-700 max-w-4xl mx-auto">
-            Dr. Shankarrao Chavan Government College of Nursing, Vishnupuri, Nanded
+            Government College of Nursing (B.Sc.), Vishnupuri, Nanded
           </h3>
         </div>
 
@@ -62,7 +62,7 @@ const About = () => {
                 In the state, Government Medical Colleges have considered the need of Nursing Officers, therefore Dr. Shankarrao Chavan Government Medical College and Hospital, Vishnupuri Nanded have Established Government College of Nursing (B.Sc.) with an <span className="font-semibold text-emerald-600">intake capacity of 50 students</span> which was approved by government in the meeting of cabinet on 28.02.2021.
               </p>
               <p>
-                The college is recognized by <span className="font-semibold">Indian Nursing Council (INC) New Delhi</span>, and <span className="font-semibold">Maharashtra University of Health Sciences (MUHS) Nashik</span> and is committed to provide promotive, preventive, curative and rehabilitative services to all to achieve excellence in Nursing education, Clinical practice and Community service.
+                The college is recognized by <span className="font-semibold">Indian Nursing Council (INC) New Delhi</span>, <span className="font-semibold">Maharashtra Nursing Council (MNC) Mumbai</span>, and <span className="font-semibold">Maharashtra University of Health Sciences (MUHS) Nashik</span> and is committed to provide promotive, preventive, curative and rehabilitative services to all to achieve excellence in Nursing education, Clinical practice and Community service.
               </p>
               <p>
                 The admissions to this course are purely based on merit and as per the norms of affiliating authorities. The students are provided with individual guidance from skilled and qualified teaching faculties, as well as from the eminent visiting faculties of the respective field. With this support and guidance the students are carrying out many social and clinical research projects successfully. The course will enhance the students in building their career and a great demand at national and international sectors. After completing the course, the students have job opportunities in Government / Private Sectors and also helpful for self employment.
@@ -81,11 +81,10 @@ const About = () => {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`flex flex-col sm:flex-row items-center justify-center gap-2 px-4 py-3 rounded-xl font-medium text-sm sm:text-base transition-all ${
-                      activeTab === tab.id
-                        ? "bg-indigo-600 text-white shadow-md"
-                        : "bg-gray-50 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600"
-                    }`}
+                    className={`flex flex-col sm:flex-row items-center justify-center gap-2 px-4 py-3 rounded-xl font-medium text-sm sm:text-base transition-all ${activeTab === tab.id
+                      ? "bg-indigo-600 text-white shadow-md"
+                      : "bg-gray-50 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600"
+                      }`}
                   >
                     <IconComponent className="h-5 w-5" />
                     <span className="text-center sm:text-left">{tab.title}</span>
@@ -171,13 +170,13 @@ const About = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm hover:shadow-md transition-shadow text-center sm:col-span-3 lg:col-span-1">
+          <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm hover:shadow-md transition-shadow text-center">
             <div className="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-3">
               <CheckCircle className="h-6 w-6 text-purple-600" />
             </div>
-            <h4 className="text-base font-semibold text-gray-900 mb-1">Government College</h4>
+            <h4 className="text-base font-semibold text-gray-900 mb-1">MNC Recognized</h4>
             <p className="text-sm text-gray-600">
-              Established 16th March 2021
+              Maharashtra Nursing Council, Mumbai
             </p>
           </div>
         </div>

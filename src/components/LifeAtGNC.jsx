@@ -73,11 +73,11 @@ const LifeAtGNC = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-            Life at Dr. S.C. Govt. College of Nursing
+            Life at Government College of Nursing (B.Sc.), Vishnupuri, Nanded
           </h2>
           <div className="w-24 h-1 bg-amber-500 mx-auto mb-6"></div>
           <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Experience a vibrant learning environment where academic excellence meets compassionate care. 
+            Experience a vibrant learning environment where academic excellence meets compassionate care.
             Our college fosters innovation, community service, and professional growth in every aspect of nursing education.
           </p>
         </div>
@@ -87,7 +87,7 @@ const LifeAtGNC = () => {
           {highlights.map((item, index) => {
             const IconComponent = item.icon;
             const colors = getColorClasses(item.color);
-            
+
             return (
               <div
                 key={index}
@@ -97,7 +97,7 @@ const LifeAtGNC = () => {
                 <div className={`w-14 h-14 ${colors.bg} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <IconComponent className={`h-7 w-7 ${colors.text}`} />
                 </div>
-                
+
                 {/* Content */}
                 <h3 className="text-lg font-bold text-slate-800 mb-2">
                   {item.title}
@@ -119,13 +119,13 @@ const LifeAtGNC = () => {
             Join us in shaping the future of healthcare through excellence, compassion, and dedication
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button 
+            <button
               onClick={() => document.getElementById('admissions')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Apply for Admission
             </button>
-            <button 
+            <button
               onClick={() => window.location.href = '/faculty'}
               className="px-8 py-3 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg border-2 border-white/30 hover:bg-white/20 transition-all duration-300"
             >

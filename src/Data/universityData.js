@@ -19,6 +19,7 @@ const universityData = {
     { title: "Examination", path: "/examination" },
     { title: "Academic", path: "/academic" },
     { title: "Online Payment", path: "/payment" },
+    { title: "RTI", path: "/rti" },
     { path: "/faculty", title: "Faculty" },
   ],
 

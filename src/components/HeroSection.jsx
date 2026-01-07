@@ -184,7 +184,7 @@ const HeroSection = () => {
       <div className="absolute bottom-8 right-8 bg-white/95 backdrop-blur-md rounded-xl shadow-lg p-4 hidden lg:block">
         <div className="flex gap-6">
           <div className="text-center">
-            <div className="text-2xl font-bold text-blue-600">50+</div>
+            <div className="text-2xl font-bold text-blue-600">200+</div>
             <div className="text-xs text-slate-600">Students</div>
           </div>
           <div className="text-center">

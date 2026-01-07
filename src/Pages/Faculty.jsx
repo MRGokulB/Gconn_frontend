@@ -139,9 +139,9 @@ const staticFacultyMembers = [
         At our college, I have the privilege to guide future nurses who are motivated to make a difference beyond hospital boundaries. My goal is to help them grow into professionals who embody the values of service, discipline, and humanity — the pillars of nursing excellence.`
     },
     {
-        name: 'Mr. Mahapure Shreenivas',
+        name: 'Mr. Shrinivas Shahapure',
         image: MahapureImg,
-        title: 'Tutor • Community Health',
+        title: 'Tutor • Mental Health Nursing',
         email: '',
         bio: `My journey as a community health tutor is driven by a commitment to improve healthcare access and awareness among all segments of society. I believe nursing is not only a profession but a lifelong service dedicated to human welfare. I encourage my students to explore the root causes of health disparities and to develop innovative, practical solutions.
         Through interactive learning and real-world exposure, I strive to build confidence, responsibility, and leadership among our students. Together, we are contributing to a healthcare system that prioritizes compassion, inclusivity, and proactive well-being for every community we serve.`

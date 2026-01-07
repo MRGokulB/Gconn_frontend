@@ -15,6 +15,7 @@ import FacultyPage from "./Pages/Faculty";
 import FacultyDetail from "./Pages/FacultyDetail";
 import AnnexurePage from "./Pages/Annexure";
 import About from "./Pages/About";
+import RTI from "./Pages/RTI";
 
 // Dummy Components for other sections
 // import Divisions from './Pages/Divisions';
@@ -47,7 +48,7 @@ function App() {
                 <div id="admissions"></div>
                 <Admissions />
               </section>
-              
+
               {/* <section id="career"><Career /></section> */}
               <section id="resources">
                 <Resources />
@@ -59,7 +60,7 @@ function App() {
               <section id="research">
                 <Research />
               </section>
-              
+
               <StatsSection />
               <LifeAtIITBombay />
             </>
@@ -72,11 +73,14 @@ function App() {
 
         {/* Annexure Page */}
         <Route path="/annexure" element={<AnnexurePage />} />
+
+        {/* RTI Page */}
+        <Route path="/rti" element={<RTI />} />
       </Routes>
 
-          <section id="contact-us">
-            <Footer />
-           </section>
+      <section id="contact-us">
+        <Footer />
+      </section>
     </Router>
   );
 }
