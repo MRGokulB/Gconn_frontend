@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
+import ImportantLinks from "./components/ImportantLinks";
 // import Announcements from "./components/Announcements";
 // import LatestNews from "./components/LatestNews";
 import Events from "./components/Events";
@@ -37,6 +38,7 @@ function App() {
           element={
             <>
               <HeroSection />
+              <ImportantLinks />
               <TopOfficers />
               {/* Sections with IDs for smooth scroll */}
               <section id="about">

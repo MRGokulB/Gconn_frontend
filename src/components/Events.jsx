@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaPlay } from "react-icons/fa";
 
-// Your existing imports
+// Image imports
 const Cpd1 = "/assets/Events/Continuous Professional Development Program/CPDP1.jpeg";
 const Cpd2 = "/assets/Events/Continuous Professional Development Program/CPDP2.jpeg";
 const Cpd3 = "/assets/Events/Continuous Professional Development Program/CPDP3.jpeg";
@@ -32,317 +32,215 @@ const RMHV = "/assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH
 const RolePlay = "/assets/Events/Role Play/PlayRole.mp4";
 const FireDrill = "/assets/Events/Fire Drill/Live Fire Drill - Situation ward fire.mp4";
 
+// Grouped events data
+const eventsData = [
+  {
+    id: "cpdp",
+    title: "Continuous Professional Development Program",
+    shortTitle: "CPDP",
+    description: "Workshops and seminars to enhance professional skills and competencies in nursing practice.",
+    media: [
+      { type: "image", src: Cpd1 },
+      { type: "image", src: Cpd2 },
+      { type: "image", src: Cpd3 },
+      { type: "image", src: Cpd4 },
+      { type: "image", src: Cpd5 },
+      { type: "image", src: Cpd6 },
+      { type: "image", src: Cpd7 },
+      { type: "image", src: Cpd8 },
+      { type: "image", src: Cpd9 },
+      { type: "image", src: Cpd10 },
+      { type: "image", src: Cpd11 },
+      { type: "image", src: Cpd12 },
+    ]
+  },
+  {
+    id: "edu-visits",
+    title: "Educational Visits",
+    shortTitle: "Visits",
+    description: "Visits to hospitals and healthcare institutions for practical learning experiences.",
+    media: [
+      { type: "image", src: EDU1, caption: "Rural Primary Health Centre" },
+      { type: "image", src: EDU2, caption: "Biomedical Waste Treatment Plant" },
+      { type: "image", src: EDU3, caption: "Old Age Home Visit" },
+      { type: "image", src: EDU4, caption: "Old Age Home Visit" },
+      { type: "image", src: EDU5, caption: "Sub Centre Kakandi" },
+    ]
+  },
+  {
+    id: "rmh",
+    title: "Regional Mental Hospital Yerwada, Pune",
+    shortTitle: "RMH Posting",
+    description: "Practical exposure and training in psychiatric nursing care and mental health services.",
+    media: [
+      { type: "image", src: RMH1 },
+      { type: "image", src: RMH2 },
+      { type: "image", src: RMH3 },
+      { type: "image", src: RMH4 },
+      { type: "image", src: RMH5 },
+      { type: "image", src: RMH6 },
+      { type: "video", src: RMHV },
+    ]
+  },
+  {
+    id: "role-play",
+    title: "Role Play Activities",
+    shortTitle: "Role Play",
+    description: "Interactive role-playing sessions for clinical skill development and patient communication.",
+    media: [
+      { type: "video", src: RolePlay },
+    ]
+  },
+  {
+    id: "fire-drill",
+    title: "Live Fire Drill Exercise",
+    shortTitle: "Fire Drill",
+    description: "Emergency preparedness and safety drills to prepare for hospital fire situations.",
+    media: [
+      { type: "video", src: FireDrill },
+    ]
+  },
+];
+
 const Events = () => {
-  const events = [
-    {
-      type: "image",
-      title: "Continuous Professional Development Program",
-      description: "Workshops and seminars to enhance professional skills and competencies in nursing practice.",
-      src: Cpd1,
-    },
-    {
-      type: "image",
-      title: "Continuous Professional Development Program",
-      description: "Workshops and seminars to enhance professional skills and competencies in nursing practice.",
-      src: Cpd2,
-    },
-    {
-      type: "image",
-      title: "Continuous Professional Development Program",
-      description: "Workshops and seminars to enhance professional skills and competencies in nursing practice.",
-      src: Cpd3,
-    },
-    {
-      type: "image",
-      title: "Continuous Professional Development Program",
-      description: "Workshops and seminars to enhance professional skills and competencies in nursing practice.",
-      src: Cpd4,
-    },
-    {
-      type: "image",
-      title: "Continuous Professional Development Program",
-      description: "Workshops and seminars to enhance professional skills and competencies in nursing practice.",
-      src: Cpd5,
-    },
-    {
-      type: "image",
-      title: "Continuous Professional Development Program",
-      description: "Workshops and seminars to enhance professional skills and competencies in nursing practice.",
-      src: Cpd6,
-    },
-    {
-      type: "image",
-      title: "Continuous Professional Development Program",
-      description: "Workshops and seminars to enhance professional skills and competencies in nursing practice.",
-      src: Cpd7,
-    },
-    {
-      type: "image",
-      title: "Continuous Professional Development Program",
-      description: "Workshops and seminars to enhance professional skills and competencies in nursing practice.",
-      src: Cpd8,
-    },
-    {
-      type: "image",
-      title: "Continuous Professional Development Program",
-      description: "Workshops and seminars to enhance professional skills and competencies in nursing practice.",
-      src: Cpd9,
-    },
-    {
-      type: "image",
-      title: "Continuous Professional Development Program",
-      description: "Workshops and seminars to enhance professional skills and competencies in nursing practice.",
-      src: Cpd10,
-    },
-    {
-      type: "image",
-      title: "Continuous Professional Development Program",
-      description: "Workshops and seminars to enhance professional skills and competencies in nursing practice.",
-      src: Cpd11,
-    },
-    {
-      type: "image",
-      title: "Continuous Professional Development Program",
-      description: "Workshops and seminars to enhance professional skills and competencies in nursing practice.",
-      src: Cpd12,
-    },
-    {
-      type: "image",
-      title: "Educational Visits",
-      description: "Visits to hospitals and healthcare institutions for practical learning.",
-      src: EDU1,
-    },
-    {
-      type: "image",
-      title: "Educational Visits",
-      description: "Visit to Biomedical Waste Treatment Plant for learning sustainable healthcare practices.",
-      src: EDU2,
-    },
-    {
-      type: "image",
-      title: "Educational Visits",
-      description: "Visit to Old age Home - Community engagement and elderly care experience.",
-      src: EDU3,
-    },
-    {
-      type: "image",
-      title: "Educational Visits",
-      description: "Visit to Old age Home - Community engagement and elderly care experience.",
-      src: EDU4,
-    },
-    {
-      type: "image",
-      title: "Educational Visits",
-      description: "Visit to Sub Centre Kakandi for primary healthcare exposure.",
-      src: EDU5,
-    },
-    {
-      type: "image",
-      title: "Regional Mental Hospital Yerwada, Pune Posting",
-      description: "Practical exposure and training in psychiatric nursing care and mental health services.",
-      src: RMH1,
-    },
-    {
-      type: "image",
-      title: "Regional Mental Hospital Yerwada, Pune Posting",
-      description: "Practical exposure and training in psychiatric nursing care and mental health services.",
-      src: RMH2,
-    },
-    {
-      type: "image",
-      title: "Regional Mental Hospital Yerwada, Pune Posting",
-      description: "Practical exposure and training in psychiatric nursing care and mental health services.",
-      src: RMH3,
-    },
-    {
-      type: "image",
-      title: "Regional Mental Hospital Yerwada, Pune Posting",
-      description: "Practical exposure and training in psychiatric nursing care and mental health services.",
-      src: RMH4,
-    },
-    {
-      type: "image",
-      title: "Regional Mental Hospital Yerwada, Pune Posting",
-      description: "Practical exposure and training in psychiatric nursing care and mental health services.",
-      src: RMH5,
-    },
-    {
-      type: "image",
-      title: "Regional Mental Hospital Yerwada, Pune Posting",
-      description: "Practical exposure and training in psychiatric nursing care and mental health services.",
-      src: RMH6,
-    },
-    {
-      type: "video",
-      title: "Regional Mental Hospital Yerwada, Pune Posting",
-      description: "Practical exposure and training in psychiatric nursing care and mental health services.",
-      src: RMHV,
-    },
-    {
-      type: "video",
-      title: "Role Play Activities",
-      description: "Interactive role-playing sessions for clinical skill development and patient communication.",
-      src: RolePlay,
-    },
-    {
-      type: "video",
-      title: "Live Fire Drill Exercise",
-      description: "Emergency preparedness and safety drills to prepare for hospital fire situations.",
-      src: FireDrill,
-    },
-  ];
+  const [activeEventIndex, setActiveEventIndex] = useState(0);
+  const [activeMediaIndex, setActiveMediaIndex] = useState(0);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const activeEvent = eventsData[activeEventIndex];
+  const activeMedia = activeEvent.media[activeMediaIndex];
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? events.length - 1 : prev - 1));
+  const handleEventChange = (index) => {
+    setActiveEventIndex(index);
+    setActiveMediaIndex(0); // Reset to first media when switching events
   };
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev === events.length - 1 ? 0 : prev + 1));
+  const prevMedia = () => {
+    setActiveMediaIndex((prev) =>
+      prev === 0 ? activeEvent.media.length - 1 : prev - 1
+    );
+  };
+
+  const nextMedia = () => {
+    setActiveMediaIndex((prev) =>
+      prev === activeEvent.media.length - 1 ? 0 : prev + 1
+    );
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-      {/* Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-wide mb-3">
-          Events & Programs
-        </h1>
-        <div className="w-24 h-1 bg-yellow-500 mx-auto mb-4"></div>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Explore our comprehensive training programs, educational visits, and professional development activities
-        </p>
-      </div>
+    <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-slate-800 mb-2">Events & Programs</h2>
+          <div className="w-16 h-0.5 bg-blue-600 mx-auto mb-3"></div>
+          <p className="text-slate-600 max-w-2xl mx-auto">
+            Explore our training programs, educational visits, and professional development activities
+          </p>
+        </div>
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="flex flex-col lg:flex-row gap-6 items-start">
-          {/* Main Display Area */}
-          <div className="flex-1 w-full">
-            <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
-              {/* Media Container */}
-              <div className="relative bg-gray-50">
-                {events[currentIndex].type === "image" ? (
-                  <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] flex items-center justify-center">
-                    <img
-                      src={events[currentIndex].src}
-                      alt={events[currentIndex].title}
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </div>
-                ) : (
-                  <div className="relative h-[400px] sm:h-[500px] lg:h-[600px]">
-                    <video
-                      src={events[currentIndex].src}
-                      className="w-full h-full object-contain"
-                      controls
-                      autoPlay
-                      muted
-                      loop
-                    />
-                  </div>
-                )}
+        {/* Event Tabs */}
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
+          {eventsData.map((event, index) => (
+            <button
+              key={event.id}
+              onClick={() => handleEventChange(index)}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${index === activeEventIndex
+                  ? "bg-blue-600 text-white shadow-md"
+                  : "bg-white text-slate-600 border border-slate-200 hover:border-blue-300 hover:text-blue-600"
+                }`}
+            >
+              {event.shortTitle}
+              <span className="ml-1.5 text-xs opacity-70">({event.media.length})</span>
+            </button>
+          ))}
+        </div>
 
-                {/* Navigation Arrows */}
-                <button
-                  onClick={prevSlide}
-                  className="absolute top-1/2 left-3 sm:left-4 transform -translate-y-1/2 
-                           bg-white/80 hover:bg-white backdrop-blur-sm
-                           text-gray-800 p-2.5 sm:p-3 rounded-full transition-all shadow-lg
-                           border border-gray-200 hover:scale-110"
-                  aria-label="Previous slide"
-                >
-                  <FaChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
-                </button>
-
-                <button
-                  onClick={nextSlide}
-                  className="absolute top-1/2 right-3 sm:right-4 transform -translate-y-1/2 
-                           bg-white/80 hover:bg-white backdrop-blur-sm
-                           text-gray-800 p-2.5 sm:p-3 rounded-full transition-all shadow-lg
-                           border border-gray-200 hover:scale-110"
-                  aria-label="Next slide"
-                >
-                  <FaChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
-                </button>
-
-                {/* Progress Indicator */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 
-                              bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg 
-                              border border-gray-200 shadow-sm">
-                  <span className="text-sm font-medium text-gray-700">
-                    {currentIndex + 1} / {events.length}
-                  </span>
-                </div>
-              </div>
-
-              {/* Content Info */}
-              <div className="p-4 sm:p-6 border-t border-gray-200">
-                <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2">
-                  {events[currentIndex].title}
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                  {events[currentIndex].description}
-                </p>
-              </div>
-            </div>
+        {/* Main Content */}
+        <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+          {/* Event Title Bar */}
+          <div className="px-6 py-4 border-b border-slate-100 bg-slate-50">
+            <h3 className="text-lg font-semibold text-slate-800">{activeEvent.title}</h3>
+            <p className="text-sm text-slate-500 mt-1">{activeEvent.description}</p>
           </div>
 
-          {/* Thumbnails Sidebar */}
-          <div className="w-full lg:w-[280px]">
-            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4">
-              <h3 className="text-sm font-semibold text-gray-900 mb-3 flex items-center">
-                <div className="w-1 h-4 bg-indigo-500 mr-2 rounded-full"></div>
-                All Events ({events.length})
-              </h3>
-              
-              <div className="flex lg:flex-col gap-2 sm:gap-3 overflow-x-auto lg:overflow-y-auto 
-                            max-h-[140px] lg:max-h-[calc(100vh-280px)] 
-                            scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 
-                            pb-2 lg:pb-0 pr-0 lg:pr-2">
-                {events.map((event, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCurrentIndex(i)}
-                    className={`flex-shrink-0 w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] lg:w-full lg:h-[120px] 
-                              rounded-lg overflow-hidden border-2 transition-all
-                              hover:scale-105 hover:shadow-md relative group
-                              ${i === currentIndex 
-                                ? "border-indigo-500 shadow-lg ring-2 ring-indigo-200" 
-                                : "border-gray-200 hover:border-indigo-300"}`}
-                  >
-                    {event.type === "image" ? (
-                      <>
-                        <img
-                          src={event.src}
-                          alt={`Thumbnail ${i + 1}`}
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
-                      </>
-                    ) : (
-                      <>
-                        <video
-                          src={event.src}
-                          className="w-full h-full object-cover"
-                          muted
-                        />
-                        <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                          <svg className="h-8 w-8 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M8 5v10l7-5-7-5z" />
-                          </svg>
-                        </div>
-                      </>
-                    )}
-                    {i === currentIndex && (
-                      <div className="absolute top-2 right-2 w-2 h-2 bg-indigo-500 rounded-full 
-                                    ring-2 ring-white shadow-sm" />
-                    )}
-                  </button>
-                ))}
+          <div className="flex flex-col lg:flex-row">
+            {/* Main Media Display */}
+            <div className="flex-1 relative">
+              <div className="relative h-[400px] sm:h-[500px] bg-slate-100 flex items-center justify-center">
+                {activeMedia.type === "image" ? (
+                  <img
+                    src={activeMedia.src}
+                    alt={activeEvent.title}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                ) : (
+                  <video
+                    key={activeMedia.src}
+                    src={activeMedia.src}
+                    className="max-h-full max-w-full object-contain"
+                    controls
+                    autoPlay
+                    muted
+                  />
+                )}
+
+                {/* Navigation Arrows (only show if more than 1 media) */}
+                {activeEvent.media.length > 1 && (
+                  <>
+                    <button
+                      onClick={prevMedia}
+                      className="absolute top-1/2 left-3 -translate-y-1/2 bg-white/90 hover:bg-white text-slate-700 p-2.5 rounded-full shadow-md border border-slate-200 transition-all hover:scale-105"
+                    >
+                      <FaChevronLeft className="h-4 w-4" />
+                    </button>
+                    <button
+                      onClick={nextMedia}
+                      className="absolute top-1/2 right-3 -translate-y-1/2 bg-white/90 hover:bg-white text-slate-700 p-2.5 rounded-full shadow-md border border-slate-200 transition-all hover:scale-105"
+                    >
+                      <FaChevronRight className="h-4 w-4" />
+                    </button>
+                  </>
+                )}
+
+                {/* Counter */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/90 px-3 py-1.5 rounded-full text-sm font-medium text-slate-700 shadow-sm border border-slate-200">
+                  {activeMediaIndex + 1} / {activeEvent.media.length}
+                </div>
               </div>
             </div>
+
+            {/* Thumbnails Sidebar */}
+            {activeEvent.media.length > 1 && (
+              <div className="lg:w-48 border-t lg:border-t-0 lg:border-l border-slate-100 bg-slate-50 p-3">
+                <p className="text-xs font-medium text-slate-500 mb-2 px-1">
+                  Gallery ({activeEvent.media.length})
+                </p>
+                <div className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-y-auto lg:max-h-[440px] pb-2 lg:pb-0">
+                  {activeEvent.media.map((media, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setActiveMediaIndex(index)}
+                      className={`relative flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${index === activeMediaIndex
+                          ? "border-blue-500 ring-2 ring-blue-200"
+                          : "border-slate-200 hover:border-blue-300"
+                        }`}
+                    >
+                      {media.type === "image" ? (
+                        <img
+                          src={media.src}
+                          alt={`Thumbnail ${index + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-slate-200 flex items-center justify-center">
+                          <FaPlay className="h-4 w-4 text-slate-500" />
+                        </div>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
