@@ -6,56 +6,56 @@ import "swiper/css";
 const ResearchHighlights = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const highlights = [ 
-  {
-    id: 1,
-    img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
-    title: "Evidence-Based Patient Care",
-    description: "Implementing research-driven approaches to improve patient care outcomes and safety protocols.",
-    category: "Clinical Research",
-    icon: Award,
-  },
-  {
-    id: 2,
-    img: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=800&q=80",
-    title: "Community Health Innovations",
-    description: "Developing sustainable healthcare solutions for rural and underserved communities.",
-    category: "Public Health",
-    icon: Users,
-  },
-  {
-    id: 3,
-    img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
-    title: "Mental Health Nursing Research",
-    description: "Advancing psychiatric care through innovative therapeutic interventions and support systems.",
-    category: "Mental Health",
-    icon: TrendingUp,
-  },
-  {
-    id: 4,
-    img: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=800&q=80",
-    title: "Maternal & Child Health Studies",
-    description: "Research focused on improving maternal outcomes and neonatal care standards.",
-    category: "Maternal Health",
-    icon: Award,
-  },
-  {
-    id: 5,
-    img: "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80",
-    title: "Infection Control Protocols",
-    description: "Developing advanced sterilization and hygiene practices to reduce hospital-acquired infections.",
-    category: "Patient Safety",
-    icon: TrendingUp,
-  },
-  {
-    id: 6,
-    img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80",
-    title: "Geriatric Care Excellence",
-    description: "Research on age-specific nursing interventions and elderly patient management.",
-    category: "Geriatric Care",
-    icon: Users,
-  },
-];
+  const highlights = [
+    {
+      id: 1,
+      img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+      title: "Evidence-Based Patient Care",
+      description: "Implementing research-driven approaches to improve patient care outcomes and safety protocols.",
+      category: "Clinical Research",
+      icon: Award,
+    },
+    {
+      id: 2,
+      img: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=800&q=80",
+      title: "Community Health Innovations",
+      description: "Developing sustainable healthcare solutions for rural and underserved communities.",
+      category: "Public Health",
+      icon: Users,
+    },
+    {
+      id: 3,
+      img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80",
+      title: "Mental Health Nursing Research",
+      description: "Advancing psychiatric care through innovative therapeutic interventions and support systems.",
+      category: "Mental Health",
+      icon: TrendingUp,
+    },
+    {
+      id: 4,
+      img: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=800&q=80",
+      title: "Maternal & Child Health Studies",
+      description: "Research focused on improving maternal outcomes and neonatal care standards.",
+      category: "Maternal Health",
+      icon: Award,
+    },
+    {
+      id: 5,
+      img: "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=800&q=80",
+      title: "Infection Control Protocols",
+      description: "Developing advanced sterilization and hygiene practices to reduce hospital-acquired infections.",
+      category: "Patient Safety",
+      icon: TrendingUp,
+    },
+    {
+      id: 6,
+      img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80",
+      title: "Geriatric Care Excellence",
+      description: "Research on age-specific nursing interventions and elderly patient management.",
+      category: "Geriatric Care",
+      icon: Users,
+    },
+  ];
 
   const handlePrev = () => {
     setActiveIndex((prev) => (prev === 0 ? highlights.length - 1 : prev - 1));
@@ -80,11 +80,11 @@ const ResearchHighlights = () => {
         {/* Header */}
         <div className="text-center mb-10 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-wide mb-3">
-            Research & Innovation
+            Clinical Facilities
           </h2>
           <div className="w-24 h-1 bg-yellow-500 mx-auto mb-4"></div>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Pioneering nursing research that transforms healthcare delivery and patient outcomes
+            State-of-the-art medical infrastructure and specialized departments ensuring superior patient care and practical student training
           </p>
         </div>
 
@@ -94,20 +94,18 @@ const ResearchHighlights = () => {
             {getVisibleCards().map((highlight, idx) => {
               const IconComponent = highlight.icon;
               const isCenter = highlight.position === 0;
-              
+
               return (
                 <div
                   key={`${highlight.id}-${idx}`}
-                  className={`transition-all duration-500 ${
-                    isCenter
+                  className={`transition-all duration-500 ${isCenter
                       ? 'scale-100 opacity-100 z-10'
                       : 'scale-90 opacity-60'
-                  }`}
+                    }`}
                   style={{ width: isCenter ? '400px' : '350px' }}
                 >
-                  <div className={`bg-white rounded-2xl border overflow-hidden shadow-lg ${
-                    isCenter ? 'border-indigo-200 shadow-xl' : 'border-gray-200'
-                  }`}>
+                  <div className={`bg-white rounded-2xl border overflow-hidden shadow-lg ${isCenter ? 'border-indigo-200 shadow-xl' : 'border-gray-200'
+                    }`}>
                     <div className="relative h-56 overflow-hidden">
                       <img
                         src={highlight.img}
@@ -161,11 +159,10 @@ const ResearchHighlights = () => {
               <button
                 key={idx}
                 onClick={() => setActiveIndex(idx)}
-                className={`h-2 rounded-full transition-all ${
-                  idx === activeIndex
+                className={`h-2 rounded-full transition-all ${idx === activeIndex
                     ? 'w-8 bg-indigo-600'
                     : 'w-2 bg-gray-300 hover:bg-gray-400'
-                }`}
+                  }`}
                 aria-label={`Go to research ${idx + 1}`}
               />
             ))}
