@@ -5,7 +5,7 @@ import ImportantLinks from "./components/ImportantLinks";
 // import Announcements from "./components/Announcements";
 // import LatestNews from "./components/LatestNews";
 import Events from "./components/Events";
-import ResearchHighlights from "./components/ResearchHighlights";
+// import ResearchHighlights from "./components/ResearchHighlights";
 import StatsSection from "./components/StatsSection";
 import LifeAtIITBombay from "./components/LifeAtGNC";
 import Footer from "./components/Footer";
@@ -22,7 +22,7 @@ import RTI from "./Pages/RTI";
 // import Divisions from './Pages/Divisions';
 // import Academics from './Pages/Academics';
 import Admissions from "./Pages/Admissions";
-import Research from "./components/ResearchHighlights";
+// import Research from "./components/ResearchHighlights";
 // import Career from './Pages/Career';
 import Resources from "./Pages/Resources";
 // import Contact from './Pages/Contact';
@@ -59,9 +59,11 @@ function App() {
               {/* <Announcements />
               <LatestNews /> */}
               <Events />
+              {/*
               <section id="research">
                 <Research />
               </section>
+              */}
 
               <StatsSection />
               <LifeAtIITBombay />
