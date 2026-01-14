@@ -16,6 +16,28 @@ export default function ImportantLinks() {
     return (
         <section className="py-12 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Affiliations Header */}
+                <div className="mt-10 pt-6 border-t border-slate-100">
+                    <p className="text-center text-xs text-slate-400 mb-4">
+                        Affiliated & Recognized by
+                    </p>
+                    <div className="flex flex-wrap justify-center items-center gap-6 text-slate-500">
+                        <div className="flex items-center gap-2">
+                            <Building2 className="h-4 w-4" />
+                            <span className="text-xs font-medium">Indian Nursing Council</span>
+                        </div>
+                        <div className="h-3 w-px bg-slate-200 hidden sm:block"></div>
+                        <div className="flex items-center gap-2">
+                            <GraduationCap className="h-4 w-4" />
+                            <span className="text-xs font-medium">MUHS Nashik</span>
+                        </div>
+                        <div className="h-3 w-px bg-slate-200 hidden sm:block"></div>
+                        <div className="flex items-center gap-2">
+                            <BookOpen className="h-4 w-4" />
+                            <span className="text-xs font-medium">Maharashtra Nursing Council</span>
+                        </div>
+                    </div>
+                </div>
                 {/* Minimal Header */}
                 <div className="text-center mb-10">
                     <h2 className="text-2xl font-semibold text-slate-800 mb-2">
@@ -47,28 +69,7 @@ export default function ImportantLinks() {
                     ))}
                 </div>
 
-                {/* Affiliations Footer */}
-                <div className="mt-10 pt-6 border-t border-slate-100">
-                    <p className="text-center text-xs text-slate-400 mb-4">
-                        Affiliated & Recognized by
-                    </p>
-                    <div className="flex flex-wrap justify-center items-center gap-6 text-slate-500">
-                        <div className="flex items-center gap-2">
-                            <Building2 className="h-4 w-4" />
-                            <span className="text-xs font-medium">Indian Nursing Council</span>
-                        </div>
-                        <div className="h-3 w-px bg-slate-200 hidden sm:block"></div>
-                        <div className="flex items-center gap-2">
-                            <GraduationCap className="h-4 w-4" />
-                            <span className="text-xs font-medium">MUHS Nashik</span>
-                        </div>
-                        <div className="h-3 w-px bg-slate-200 hidden sm:block"></div>
-                        <div className="flex items-center gap-2">
-                            <BookOpen className="h-4 w-4" />
-                            <span className="text-xs font-medium">Maharashtra Nursing Council</span>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </section>
     );
