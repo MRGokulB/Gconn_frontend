@@ -12,7 +12,7 @@ const officers = [
   {
     name: "Prof. Balaji Nangrale",
     title: "Principal",
-    specialty: "Medical Surgical Nursing",
+    specialty: "Medical Surgical Oncology Nursing",
     img: NangraleImg,
     isPrincipal: true,
   },

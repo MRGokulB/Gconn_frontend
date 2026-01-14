@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Eye, Target, Lightbulb, Trophy, CheckCircle } from "lucide-react";
+import NursePledge from "../components/NursePledge";
 
 const About = () => {
   const [activeTab, setActiveTab] = useState("vision");
@@ -150,36 +151,54 @@ const About = () => {
 
         {/* Recognition Badges */}
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm hover:shadow-md transition-shadow text-center">
-            <div className="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-3">
+          <a
+            href="https://indiannursingcouncil.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-white rounded-xl border border-gray-200 p-5 shadow-sm hover:shadow-md transition-shadow text-center hover:border-green-200 group"
+          >
+            <div className="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
               <CheckCircle className="h-6 w-6 text-green-600" />
             </div>
-            <h4 className="text-base font-semibold text-gray-900 mb-1">INC Recognized</h4>
+            <h4 className="text-base font-semibold text-gray-900 mb-1 group-hover:text-green-700">INC Recognized</h4>
             <p className="text-sm text-gray-600">
               Indian Nursing Council, New Delhi
             </p>
-          </div>
+          </a>
 
-          <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm hover:shadow-md transition-shadow text-center">
-            <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-3">
+          <a
+            href="https://www.muhs.ac.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-white rounded-xl border border-gray-200 p-5 shadow-sm hover:shadow-md transition-shadow text-center hover:border-blue-200 group"
+          >
+            <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
               <CheckCircle className="h-6 w-6 text-blue-600" />
             </div>
-            <h4 className="text-base font-semibold text-gray-900 mb-1">MUHS Affiliated</h4>
+            <h4 className="text-base font-semibold text-gray-900 mb-1 group-hover:text-blue-700">MUHS Affiliated</h4>
             <p className="text-sm text-gray-600">
               Maharashtra University of Health Sciences
             </p>
-          </div>
+          </a>
 
-          <div className="bg-white rounded-xl border border-gray-200 p-5 shadow-sm hover:shadow-md transition-shadow text-center">
-            <div className="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-3">
+          <a
+            href="https://maharashtranursingcouncil.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-white rounded-xl border border-gray-200 p-5 shadow-sm hover:shadow-md transition-shadow text-center hover:border-purple-200 group"
+          >
+            <div className="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
               <CheckCircle className="h-6 w-6 text-purple-600" />
             </div>
-            <h4 className="text-base font-semibold text-gray-900 mb-1">MNC Recognized</h4>
+            <h4 className="text-base font-semibold text-gray-900 mb-1 group-hover:text-purple-700">MNC Recognized</h4>
             <p className="text-sm text-gray-600">
               Maharashtra Nursing Council, Mumbai
             </p>
-          </div>
+          </a>
         </div>
+
+        {/* Nurse's Pledge Section */}
+        <NursePledge />
       </div>
     </section>
   );

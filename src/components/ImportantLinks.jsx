@@ -9,6 +9,7 @@ const links = [
     { name: 'DMER Maharashtra', description: 'Directorate of Medical Education', url: 'https://dmer.maharashtra.gov.in/' },
     { name: 'Indian Nursing Council', description: 'National Regulatory Body', url: 'https://indiannursingcouncil.org/' },
     { name: 'Maharashtra Nursing Council', description: 'State Regulatory Body', url: 'https://maharashtranursingcouncil.org/' },
+    { name: 'TNAI', description: 'The Trained Nurses Association of India', url: 'https://www.tnaionline.org/' },
 ];
 
 export default function ImportantLinks() {

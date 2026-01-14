@@ -152,7 +152,7 @@ const universityData = {
         By connecting theoretical knowledge with field experiences, I guide my students to see health from a broader, people-centered perspective. My vision is to develop professionals who are compassionate advocates of preventive care and community development. Together, we aim to build a healthier and more informed society through service, outreach, and continuous learning.`
     },
     {
-      name: 'Mr. Muddassir Ansari',
+      name: 'Mr. Mudassir Ansari',
       image: "/assets/images/Faculty/Ansari.jpg",
       title: 'Tutor • Community Health Nursing',
       email: 'mudseeransari@gmail.com',
@@ -200,7 +200,7 @@ const universityData = {
         Our college’s mission aligns perfectly with my vision to train nurses who are confident, capable, and community-oriented. I take pride in mentoring students who will become ambassadors of preventive health, working tirelessly to uplift the lives of individuals and families across all backgrounds.`
     },
     {
-      name: 'Mr. Sushil Rathod',
+      name: 'Mr. Sushilkumar Rathod',
       image: "/assets/images/Faculty/Rathod Sushil.jpg",
       title: 'Tutor • Community Health Nursing',
       email: '',

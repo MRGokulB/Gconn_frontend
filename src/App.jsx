@@ -59,9 +59,9 @@ function App() {
               {/* <Announcements />
               <LatestNews /> */}
               <Events />
-              <section id="research">
+              {/* <section id="research">
                 <Research />
-              </section>
+              </section> */}
 
               <StatsSection />
               <LifeAtIITBombay />
