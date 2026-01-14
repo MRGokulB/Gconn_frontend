@@ -62,12 +62,12 @@ const HeroSection = () => {
                 Empowering future healthcare leaders through compassionate care and evidence-based practice
               </p>
               <div className="flex flex-wrap gap-4">
-                <button 
+                {/* <button 
                   onClick={() => document.getElementById('admissions')?.scrollIntoView({ behavior: 'smooth' })}
                   className="px-8 py-3 bg-emerald-500 text-white font-semibold rounded-lg hover:bg-emerald-600 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   Apply Now
-                </button>
+                </button> */}
                 <button 
                   onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
                   className="px-8 py-3 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg border-2 border-white/30 hover:bg-white/20 transition-all duration-300"
