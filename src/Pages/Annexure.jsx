@@ -67,6 +67,23 @@ const YEAR_FILES = {
     "ANNEXURE XV.pdf",
     "ANNEXURE XVI.pdf",
   ],
+  "Annexures 2026-27": [
+    "Annexure  I.pdf",
+    "Annexure  II.pdf",
+    "Annexure  III.pdf",
+    "Annexure  IV.pdf",
+    "Annexure  V.pdf",
+    "Annexure  VI.pdf",
+    "Annexure  VII.pdf",
+    "Annexure  VIII.pdf",
+    "Annexure  IX.pdf",
+    "Annexure  X.pdf",
+    "Annexure  XI.pdf",
+    "Annexure  XII.pdf",
+    "Annexure  XIII.pdf",
+    "Annexure  XIII(B).pdf",
+    "Annexure  XV.pdf",
+  ],
 };
 
 function getYearwiseAnnexures() {
