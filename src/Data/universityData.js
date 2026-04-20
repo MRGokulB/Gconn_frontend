@@ -216,6 +216,70 @@ const universityData = {
         I strive to create an engaging learning environment where students can develop the critical thinking and interpersonal skills necessary for effective mental health practice. It is my privilege to mentor future nurses who will be instrumental in promoting mental health and providing support to those in need.
         Through interactive learning and real-world exposure, I strive to build confidence, responsibility, and leadership among our students. Together, we are contributing to a healthcare system that prioritizes compassion, inclusivity, and proactive well-being for every community we serve.`
     },
+    {
+      name: 'Mr. Santosh Dhanure',
+      image: "/assets/images/Faculty/Dhanure Santosh.jpeg",
+      title: 'Tutor • Medical Surgical Nursing',
+      email: 'santoshdhanure1991@gmail.com',
+      bio: `Medical Surgical Nursing with a specialization in Oncology is a demanding and deeply rewarding field that requires both clinical precision and heartfelt compassion. As a Tutor dedicated to this discipline, my goal is to prepare nursing students to deliver exceptional care to patients navigating complex surgical and oncological conditions.
+        I believe in blending evidence-based practice with empathetic patient interaction, ensuring that every student understands the science behind treatment as well as the emotional needs of those they care for. Through structured clinical exposures and case-based learning, I help students develop the critical thinking and decision-making skills essential for high-acuity care environments.
+        At our institution, I am committed to fostering a culture of continuous learning and professional growth. My vision is to mentor nurses who are not only technically proficient but also emotionally resilient — professionals who bring hope, comfort, and healing to patients and their families during the most challenging moments of their lives.`
+    },
+    {
+      name: 'Mr. Vishwajeet Kamble',
+      image: "/assets/images/Faculty/Kamble Vishwajeet.jpeg",
+      title: 'Tutor • Nursing Education',
+      email: '',
+      bio: `As a dedicated Tutor in Nursing Education, I am committed to nurturing the next generation of healthcare professionals with a focus on clinical excellence and compassionate care. My teaching philosophy revolves around creating an engaging and supportive learning environment where students can develop both their technical skills and their capacity for empathy.
+        I believe that effective nursing education goes beyond textbooks and lectures — it requires hands-on experience, reflective practice, and a deep understanding of patient-centered care. Through innovative teaching methods and mentorship, I guide students to become confident practitioners who can adapt to the evolving demands of modern healthcare.
+        At our institution, I take pride in contributing to a learning culture that values integrity, professionalism, and lifelong learning. Together, we are shaping nurses who will make meaningful contributions to health outcomes across communities.`
+    },
+    {
+      name: 'Mr. Yashwant Wathore',
+      image: "/assets/images/Faculty/Wathore Yashwant.jpeg",
+      title: 'Tutor • Nursing Education',
+      email: '',
+      bio: `Nursing is a profession built on trust, skill, and unwavering dedication to human well-being. As a Tutor, my mission is to instill these core values in every student I guide. I focus on bridging the gap between theoretical knowledge and practical application, ensuring that graduates are fully prepared for the realities of clinical practice.
+        My approach to teaching is rooted in active learning — engaging students through simulations, case discussions, and collaborative problem-solving. I believe that when students are actively involved in their education, they develop deeper understanding and stronger clinical judgment that serves them throughout their careers.
+        I am proud to be part of an institution that is dedicated to producing well-rounded nursing professionals. Through continuous mentorship and a commitment to academic excellence, I strive to help every student realize their potential and contribute meaningfully to the healthcare sector.`
+    },
+    {
+      name: 'Mr. Dnyaneshwar Panchal',
+      image: "/assets/images/Faculty/Panchal Dnyaneshwar.jpeg",
+      title: 'Tutor • Nursing Education',
+      email: '',
+      bio: `Education is the cornerstone of quality healthcare, and as a Tutor in Nursing, I am passionately devoted to building strong foundations for aspiring nurses. My teaching methodology integrates clinical expertise with innovative pedagogical approaches, preparing students to navigate complex healthcare scenarios with confidence and competence.
+        I emphasize critical thinking, ethical practice, and evidence-based decision-making in every aspect of my instruction. By creating a nurturing academic environment, I encourage students to question, explore, and grow both personally and professionally. My goal is to develop nurses who are not only skilled clinicians but also compassionate advocates for patient welfare.
+        At our college, we share a collective vision of excellence in nursing education. I am honored to play a role in mentoring future healthcare leaders who will carry forward the values of service, integrity, and dedication to the well-being of every individual they encounter.`
+    },
+    {
+      name: 'Smt. Poonam Rajput',
+      image: "/assets/images/Faculty/Rajput Poonam.jpeg",
+      title: 'Tutor • Community Health Nursing',
+      email: 'poonambaisrajput1494@gmail.com',
+      bio: `Community Health Nursing is at the heart of preventive and promotive healthcare, and as a Tutor in this specialty, I am dedicated to training nurses who can serve as catalysts for positive change in communities. My teaching focuses on equipping students with the knowledge and skills to assess community health needs, design interventions, and evaluate outcomes effectively.
+        I believe that the strength of a healthcare system lies in its ability to reach every individual, regardless of their socio-economic background. Through field-based learning, health education campaigns, and community engagement activities, I help students develop a holistic understanding of public health challenges and solutions.
+        At our institution, I am proud to nurture future nurses who will champion health equity, disease prevention, and community empowerment. Together, we are building a healthier society — one community, one family, one individual at a time.`
+    },
+    {
+      name: 'Smt. Mayuri Andhare',
+      image: "/assets/images/Faculty/Andhare Mayuri.jpeg",
+      title: 'Tutor • Obstetrics and Gynecology',
+      email: 'mayuriandhare24@gmail.com',
+      bio: `Obstetrics and Gynecology nursing is a field that demands both clinical excellence and deep compassion. As a Tutor specializing in this discipline, I am committed to preparing students to provide safe, dignified, and evidence-based care to women across all stages of their reproductive health journey.
+        My teaching philosophy centers on hands-on clinical experience combined with strong theoretical foundations. I guide students through the complexities of maternal and neonatal care, empowering them to handle both routine and high-risk situations with confidence and sensitivity. I believe that every mother and newborn deserves the highest standard of care, and this belief drives my dedication to nursing education.
+        At our college, I am honored to contribute to the development of skilled, empathetic nurses who will be advocates for women's health and well-being. Through mentorship and continuous learning, we are shaping professionals who bring hope, safety, and compassion to every family they serve.`
+    },
+    {
+      name: 'Mr. Sharad Kendre',
+      image: "/assets/images/Faculty/Kendre Sharad.jpeg",
+      title: 'Assistant Professor • Mental Health Nursing',
+      email: 'sharadkendre777@gmail.com',
+      bio: `A professor specializing in Mental Health (Psychiatric) Nursing operates at the intersection of clinical expertise, academic research, and advocacy. Their focus is not just on treating illness, but on the holistic "recovery model" and the psychological well-being of both patients and the student nurses they mentor.
+        Psychiatric nursing education plays a vital role in preparing nursing students to meet the growing mental health needs of individuals and communities. As a Mental health professional and Assistant Professor in an Institute of Nursing, my responsibilities are guiding, teaching, and mentoring students to become competent and compassionate mental health professionals.
+        My focus goes far beyond just delivering lectures. It centers on shaping competent, empathetic, and mentally aware nurses who can handle real-life psychological and emotional challenges in patients.
+        My role in an Institute of Nursing is crucial in shaping the future workforce of mental health services. Through effective teaching, clinical supervision, and mentorship, the educator ensures the development of skilled, ethical, and compassionate nurses capable of providing holistic mental health care in both hospital and community settings.`
+    },
   ]
 };
 
