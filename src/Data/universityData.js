@@ -104,7 +104,7 @@ const universityData = {
     {
       name: 'Prof. Bhimu Chakre',
       image: "/assets/images/Faculty/ChakreBP.jpg",
-      title: 'Vice Principal • Mental Health Nursing',
+      title: 'Principal • Mental Health Nursing',
       email: 'bpchakre@gmail.com',
       bio: `Mental health is an essential pillar of healthcare, influencing every aspect of an individual's life and well-being. As Vice Principal and faculty in Mental Health Nursing, I am dedicated to shaping nurses who can deliver holistic, empathetic, and evidence-based care. My goal is to foster a deeper understanding of the human mind and its connection to overall health, preparing students to respond compassionately and competently to mental health challenges.
         At our institution, we provide an environment that prioritizes emotional intelligence, patient-centered care, and interdisciplinary collaboration. I guide students to develop strong clinical judgment while nurturing empathy and communication — two core values of mental health nursing. We encourage active learning through case studies, role-play, and reflective discussions, ensuring that students become confident and sensitive caregivers.
@@ -113,7 +113,7 @@ const universityData = {
     {
       name: 'Prof. Balaji Nangrale',
       image: "/assets/images/Faculty/Nangrale B B.jpg",
-      title: 'Principal • Medical Surgical Oncology Nursing',
+      title: 'Vice Principal • Medical Surgical Oncology Nursing',
       email: 'balajinagrale@gmail.com',
       bio: `College of Nursing, proposes to prepare nurses for global healthcare industry. The health care needs of people are dynamic and are more challenging with emerging new diseases and increasing load of non-communicable diseases. The nurses today have their roles expanded from traditional care giving to their contributions in preventive and promotive aspects of health. Our college with its state of the art facilities shall be one of the best college of nursing in the Nanded district and Marathawada region of Maharashtra.
         Today, alternative and complementary modalities of treatment is accessible and affordable to people of all classes. Nurses need to be trained in caring for clients choosing from these diverse treatment modalities. The books of nursing demand inclusions of extensive literature related to caring the patients opting such modalities. This college is committed to fulfil these demands of the present client. As head of the College of Nursing, I feel privileged to be part of a visionary group committed to social cause and quality health professional's education.
