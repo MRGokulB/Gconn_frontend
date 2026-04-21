@@ -140,7 +140,7 @@ const universityData = {
     {
       name: 'Mr. Salim Shaikh',
       image: "/assets/images/Faculty/Shaikh.jpg",
-      title: 'Professor • Community Health Nursing',
+      title: 'Associate Professor • Community Health Nursing',
       email: 'ss13111972@gmail.com',
       bio: `Community Health Nursing stands as the bridge between healthcare institutions and the people they serve. My teaching philosophy revolves around empowering students to address real-world challenges through preventive, promotive, and rehabilitative care. I encourage each learner to understand the social, economic, and environmental determinants of health that shape communities.
         By guiding students in outreach programs and rural health initiatives, I aim to cultivate leadership and empathy among future nurses. Our goal is to produce community health professionals who not only treat illness but also work toward long-term wellness and equity. Together, we are nurturing a generation of nurses ready to transform public health through compassion, service, and knowledge.`
@@ -148,7 +148,7 @@ const universityData = {
     {
       name: 'Mr. Rameshwar Palwade',
       image: "/assets/images/Faculty/Palwade R V.jpg",
-      title: 'Assistant Professor • Community Health Nursing',
+      title: 'Associate Professor • Community Health Nursing',
       email: 'Rampalwade6171@gmail.com',
       bio: `Community health is the soul of nursing education — and my mission is to help students understand its depth and importance. I focus on preparing nurses who can serve not only in hospitals but in villages, schools, and families — wherever health promotion is needed most.
         By connecting theoretical knowledge with field experiences, I guide my students to see health from a broader, people-centered perspective. My vision is to develop professionals who are compassionate advocates of preventive care and community development. Together, we aim to build a healthier and more informed society through service, outreach, and continuous learning.`
@@ -172,7 +172,7 @@ const universityData = {
     {
       name: 'Mr. Ajay Mohite',
       image: "/assets/images/Faculty/Mohite.jpeg",
-      title: 'Tutor • Community Health Nursing',
+      title: 'Assistant Professor • Community Health Nursing',
       email: 'ajaymohite17@gmail.com',
       bio: `Community Health Nursing is about service beyond walls — reaching people where they live, work, and learn. I consider it a privilege to guide students on this rewarding path of public service and empowerment. Through my teaching, I emphasize the value of teamwork, cultural sensitivity, and innovative thinking in addressing public health challenges.
         Our college provides a strong foundation for such experiential learning, allowing students to participate directly in community programs and surveys. My goal is to see each student graduate not just as a nurse, but as a change-maker — ready to contribute to a healthier, more resilient society.`
