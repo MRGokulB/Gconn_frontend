@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { FaChevronLeft, FaChevronRight, FaPlay } from "react-icons/fa";
-import { fetchEventsFromSheet } from "../services/googleSheetService";
+import { fetchEvents as fetchEventsFromApi, isApiConfigured } from "../services/eventsApi";
 
 const STATIC_EVENTS = [
   {
@@ -191,9 +191,26 @@ const Events = () => {
 
     (async () => {
       try {
-        const sheetEvents = await fetchEventsFromSheet();
-        if (!cancelled && sheetEvents?.length > 0) {
-          setEventsData(sheetEvents);
+        let result = null;
+        if (isApiConfigured()) {
+          result = await fetchEventsFromApi();
+        }
+        if (!cancelled && result?.length > 0) {
+          // Give static events a default order if they don't have one (starting at 100 so they appear after dynamic by default, or 1 to interleave them)
+          // Let's assign them 1, 2, 3, 4, 5 so the admin can easily slot dynamic events anywhere.
+          const staticWithOrder = STATIC_EVENTS.map((ev, index) => ({
+            ...ev,
+            order: ev.order || (index + 1) * 10 // Give them 10, 20, 30... so there's room to put things between them!
+          }));
+
+          const combinedEvents = [
+            ...result,
+            ...staticWithOrder.filter(staticEv => !result.find(dynEv => dynEv.id === staticEv.id))
+          ];
+
+          // Sort EVERYTHING by the 'order' field ascending
+          combinedEvents.sort((a, b) => (a.order || 0) - (b.order || 0));
+          setEventsData(combinedEvents);
           setActiveEventIndex(0);
           setActiveMediaIndex(0);
         }
