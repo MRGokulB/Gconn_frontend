@@ -17,6 +17,7 @@ import FacultyDetail from "./Pages/FacultyDetail";
 import AnnexurePage from "./Pages/Annexure";
 import About from "./Pages/About";
 import RTI from "./Pages/RTI";
+import Admin from "./Pages/Admin";
 
 // Dummy Components for other sections
 // import Divisions from './Pages/Divisions';
@@ -71,6 +72,7 @@ function App() {
           }
         />
         <Route path="/events" element={<Events />} />
+        <Route path="/admin" element={<Admin />} />
         {/* Faculty Pages */}
         <Route path="/faculty" element={<FacultyPage />} />
         <Route path="/faculty/:id" element={<FacultyDetail />} />
