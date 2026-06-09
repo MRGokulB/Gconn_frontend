@@ -15,6 +15,7 @@ import FacultyPage from "./Pages/Faculty";
 import FacultyDetail from "./Pages/FacultyDetail";
 import AnnexurePage from "./Pages/Annexure";
 import About from "./Pages/About";
+import Admin from "./Pages/Admin";
 
 // Dummy Components for other sections
 // import Divisions from './Pages/Divisions';
@@ -72,6 +73,7 @@ function App() {
 
         {/* Annexure Page */}
         <Route path="/annexure" element={<AnnexurePage />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
 
           <section id="contact-us">
