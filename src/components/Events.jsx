@@ -258,7 +258,7 @@ const Events = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [prevMedia, nextMedia]);
 
-  if (!activeEvent || !activeMedia) return null;
+  if (!activeEvent) return null;
 
   return (
     <div id="events-programs" className="bg-gradient-to-br from-slate-50 via-white to-blue-50 py-12">
@@ -304,23 +304,34 @@ const Events = () => {
               <div className="flex flex-col lg:flex-row">
                 <div className="flex-1 relative">
                   <div className="relative h-[400px] sm:h-[500px] bg-slate-100 flex items-center justify-center overflow-hidden">
-                    <MediaRenderer
-                      media={activeMedia}
-                      eventTitle={activeEvent.title}
-                      onImageLoad={() => setMediaLoaded(true)}
-                      onImageError={(e) => {
-                        e.target.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmMWY1ZjkiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzk0YTNiOCIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPkltYWdlIHVuYXZhaWxhYmxlPC90ZXh0Pjwvc3ZnPg==';
-                        setMediaLoaded(true);
-                      }}
-                    />
+                    {activeMedia ? (
+                      <>
+                        <MediaRenderer
+                          media={activeMedia}
+                          eventTitle={activeEvent.title}
+                          onImageLoad={() => setMediaLoaded(true)}
+                          onImageError={(e) => {
+                            e.target.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmMWY1ZjkiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzk0YTNiOCIgZm9udC1zaXplPSIxNCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiPkltYWdlIHVuYXZhaWxhYmxlPC90ZXh0Pjwvc3ZnPg==';
+                            setMediaLoaded(true);
+                          }}
+                        />
 
-                    {activeMedia.caption && (
-                      <div className="absolute bottom-14 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm text-white px-4 py-1.5 rounded-lg text-sm max-w-[80%] text-center pointer-events-none">
-                        {activeMedia.caption}
+                        {activeMedia.caption && (
+                          <div className="absolute bottom-14 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm text-white px-4 py-1.5 rounded-lg text-sm max-w-[80%] text-center pointer-events-none">
+                            {activeMedia.caption}
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <div className="flex flex-col items-center justify-center text-slate-400">
+                        <svg className="w-16 h-16 text-slate-300 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <p className="text-sm font-medium">No media added yet</p>
                       </div>
                     )}
 
-                    {activeEvent.media.length > 1 && (
+                    {activeEvent.media?.length > 1 && (
                       <>
                         <button
                           onClick={prevMedia}
@@ -339,9 +350,11 @@ const Events = () => {
                       </>
                     )}
 
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-medium text-slate-700 shadow-sm border border-slate-200 z-10">
-                      {activeMediaIndex + 1} / {activeEvent.media.length}
-                    </div>
+                    {activeEvent.media?.length > 0 && (
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-medium text-slate-700 shadow-sm border border-slate-200 z-10">
+                        {activeMediaIndex + 1} / {activeEvent.media.length}
+                      </div>
+                    )}
                   </div>
                 </div>
 
