@@ -79,7 +79,7 @@ function App() {
 
         {/* Annexure Page */}
         <Route path="/annexure" element={<AnnexurePage />} />
-
+        <Route path="/admin" element={<Admin />} />
         {/* RTI Page */}
         <Route path="/rti" element={<RTI />} />
       </Routes>

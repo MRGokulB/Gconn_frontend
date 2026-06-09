@@ -1,4 +1,7 @@
-const API_BASE = (import.meta.env.VITE_API_URL || 'http://localhost:5000/api').replace(/\/+$/, '');
+let API_BASE = (import.meta.env.VITE_API_URL || import.meta.env.VITE_EVENTS_API_URL || 'http://localhost:5000/api').replace(/\/+$/, '');
+if (!API_BASE.endsWith('/api')) {
+  API_BASE += '/api';
+}
 const CACHE_KEY = 'gconn_events_v3';
 const CACHE_TTL = 3 * 60 * 1000;
 const TOKEN_KEY = 'gconn_auth_token';

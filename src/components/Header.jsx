@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaUserShield } from "react-icons/fa";
 
 const Logo = "/assets/images/Logo/CollegeLogo.png";
 const Header = () => {
@@ -71,6 +72,16 @@ const Header = () => {
                 </a>
               );
             })}
+
+            <div className="w-px h-6 bg-gray-200 mx-3 hidden xl:block"></div>
+
+            <Link
+              to="/admin"
+              className="ml-2 px-5 py-2.5 flex items-center gap-2 text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 rounded-full shadow hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+            >
+              <FaUserShield className="w-4 h-4" />
+              <span>Admin Portal</span>
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -107,6 +118,17 @@ const Header = () => {
                   </div>
                 </a>
               ))}
+              
+              <div className="px-4 py-3 border-t border-gray-100 mt-2">
+                <Link
+                  to="/admin"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex justify-center items-center gap-2 w-full py-3 text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-blue-600 rounded-xl shadow-md hover:shadow-lg transition-all active:scale-[0.98]"
+                >
+                  <FaUserShield className="w-4 h-4" />
+                  <span>Admin Portal</span>
+                </Link>
+              </div>
             </nav>
           </div>
         )}
