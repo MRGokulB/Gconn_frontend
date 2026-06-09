@@ -4,6 +4,8 @@ import Banner2 from "../../public/College Building.jpg";
 import Banner3 from "../../public/College Building.jpg";
 import Banner4 from "../../public/College Building.jpg";
 
+import ImportantLinks from "../components/ImportantLinks";
+
 const images = [Banner1, Banner2, Banner3, Banner4];
 
 // Animation class list
@@ -33,25 +35,13 @@ export default function Home() {
 
   return (
     <div className="w-full">
-      
+
 
       {/* Hero Section */}
       <section className="w-full bg-slate-50 py-10">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           {/* Left side - Important Links */}
-          <div className="bg-white shadow-lg rounded-xl p-6 border border-slate-200">
-            <h2 className="text-xl font-semibold mb-4 text-slate-800 border-b pb-2">
-              📎 Important Links
-            </h2>
-            <ul className="space-y-3 text-sm text-slate-700">
-              <li><a href="#" className="hover:text-blue-700">➤ Examination Notifications</a></li>
-              <li><a href="#" className="hover:text-blue-700">➤ Online Payment Portal</a></li>
-              <li><a href="#" className="hover:text-blue-700">➤ Student Login Portal</a></li>
-              <li><a href="#" className="hover:text-blue-700">➤ Digital Library Access</a></li>
-              <li><a href="#" className="hover:text-blue-700">➤ Result & Degree Verification</a></li>
-              <li><a href="#" className="hover:text-blue-700">➤ Academic Calendar 2025</a></li>
-            </ul>
-          </div>
+          <ImportantLinks />
 
           {/* Right side - Image slider */}
           <div className="relative w-full h-[450px] overflow-hidden rounded-xl shadow-xl border">

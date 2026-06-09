@@ -1,3 +1,4 @@
 node_modules/
- 
 .env
+GCONN-Website-Media/
+public/test-events.csv

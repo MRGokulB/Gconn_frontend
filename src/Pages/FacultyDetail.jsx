@@ -1,12 +1,14 @@
-// src/Pages/FacultyDetail.jsx
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { Mail, ArrowLeft, User, BookOpen, GraduationCap } from 'lucide-react';
+import universityData from '../Data/universityData';
 
 const FacultyDetail = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { facultyMember } = location.state || {};
+  const { id } = useParams();
+
+  const facultyMember = location.state?.facultyMember || universityData.facultyMembers.find(m => m.name === id);
 
   if (!facultyMember) {
     return (
@@ -79,13 +81,13 @@ const FacultyDetail = () => {
                   <h3 className="text-sm font-semibold text-gray-900  flex items-center">
                     <Mail className="h-4 w-4 mr-2 text-teal-600" />
                     <a
-                    href={`mailto:${facultyMember.email}`}
-                    className="text-sm text-teal-600 hover:text-teal-700 transition-colors break-all font-medium"
-                  >
-                    {facultyMember.email}
-                  </a> 
+                      href={`mailto:${facultyMember.email}`}
+                      className="text-sm text-teal-600 hover:text-teal-700 transition-colors break-all font-medium"
+                    >
+                      {facultyMember.email}
+                    </a>
                   </h3>
-        
+
                 </div>
               )}
             </div>
