@@ -1,0 +1,31 @@
+event_id,title,short_title,description,media_type,media_url,caption,order
+cpdp,Continuous Professional Development Program,CPDP,Workshops and seminars to enhance professional skills and competencies in nursing practice.,image,/assets/Events/Continuous Professional Development Program/CPDP1.jpeg,,1
+cpdp,,,,,/assets/Events/Continuous Professional Development Program/CPDP2.jpeg,,1
+cpdp,,,,image,/assets/Events/Continuous Professional Development Program/CPDP3.jpeg,,1
+cpdp,,,,image,/assets/Events/Continuous Professional Development Program/CPDP4.jpeg,,1
+cpdp,,,,image,/assets/Events/Continuous Professional Development Program/CPDP5.jpeg,,1
+cpdp,,,,image,/assets/Events/Continuous Professional Development Program/CPDP6.jpeg,,1
+cpdp,,,,image,/assets/Events/Continuous Professional Development Program/CPDP7.jpeg,,1
+cpdp,,,,image,/assets/Events/Continuous Professional Development Program/CPDP8.jpeg,,1
+cpdp,,,,image,/assets/Events/Continuous Professional Development Program/CPDP9.jpeg,,1
+cpdp,,,,image,/assets/Events/Continuous Professional Development Program/CPDP10.jpeg,,1
+cpdp,,,,image,/assets/Events/Continuous Professional Development Program/CPDP11.jpeg,,1
+cpdp,,,,image,/assets/Events/Continuous Professional Development Program/CPDP12.jpeg,,1
+edu-visits,Educational Visits,Visits,Visits to hospitals and healthcare institutions for practical learning experiences.,image,/assets/Events/Educational Visits/RPH.jpeg,Rural Primary Health Centre,2
+edu-visits,,,,image,/assets/Events/Educational Visits/Visit to Biomedical Waste Treatment Plant.jpeg,Biomedical Waste Treatment Plant,2
+edu-visits,,,,image,/assets/Events/Educational Visits/Visit to Old age Home.jpeg,Old Age Home Visit,2
+edu-visits,,,,image,/assets/Events/Educational Visits/Visit to Old age Home1.jpeg,Old Age Home Visit,2
+edu-visits,,,,image,/assets/Events/Educational Visits/Visit to Sub Centre Kakandi.jpeg,Sub Centre Kakandi,2
+rmh,"Regional Mental Hospital Yerwada, Pune",RMH Posting,Practical exposure and training in psychiatric nursing care and mental health services.,image,"/assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH1.jpeg",,3
+rmh,,,,image,"/assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH2.jpeg",,3
+rmh,,,,image,"/assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH3.jpeg",,3
+rmh,,,,image,"/assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH4.jpeg",,3
+rmh,,,,image,"/assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH5.jpeg",,3
+rmh,,,,image,"/assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMH6.jpeg",,3
+rmh,,,,video,"/assets/Events/Regional Mental Hospital Yelwarda, Pune Posting/RMHV.mp4",,3
+role-play,Role Play Activities,Role Play,Interactive role-playing sessions for clinical skill development and patient communication.,video,/assets/Events/Role Play/PlayRole.mp4,,4
+fire-drill,Live Fire Drill Exercise,Fire Drill,Emergency preparedness and safety drills to prepare for hospital fire situations.,video,/assets/Events/Fire Drill/Live Fire Drill - Situation ward fire.mp4,,5
+dummy-test,🎓 Annual Day Celebration 2026,Annual Day,A grand celebration showcasing student talents and achievements of the academic year.,image,/assets/Events/Continuous Professional Development Program/CPDP1.jpeg,Opening Ceremony,6
+dummy-test,,,,image,/assets/Events/Continuous Professional Development Program/CPDP5.jpeg,Prize Distribution,6
+dummy-test,,,,image,/assets/Events/Educational Visits/RPH.jpeg,Cultural Program,6
+dummy-test,,,,video,https://www.youtube.com/watch?v=dQw4w9WgXcQ,Highlights Video,6
