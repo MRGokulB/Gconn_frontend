@@ -12,7 +12,7 @@ const officers = [
   {
     name: "Prof. Balaji Nangrale",
     title: "Principal",
-    specialty: "Administration",
+    specialty: "Medical Surgical Oncology Nursing",
     img: NangraleImg,
     isPrincipal: true,
   },
@@ -32,7 +32,7 @@ const officers = [
   {
     name: "Mr. Salim Shaikh",
     title: "Tutor",
-    specialty: "Community Health",
+    specialty: "Community Health Nursing",
     img: ShaikhImg,
   },
   {
@@ -55,7 +55,7 @@ export default function TopOfficers() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-           
+
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
             Our Distinguished Faculty
           </h2>
@@ -68,37 +68,37 @@ export default function TopOfficers() {
         {/* Faculty Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-10">
           {officers.map((officer, index) => (
-          <div key={index} className="text-center">
-            {/* Circular Image with Yellow Laurel Ring */}
-            <div className="relative flex items-center justify-center">
-              <div className="w-28 h-28 rounded-full border-4 border-yellow-400 flex items-center justify-center p-1 shadow-md">
-                <img
-                  src={officer.img}
-                  alt={officer.name}
-                  className="rounded-full w-full h-full object-cover"
-                />
+            <div key={index} className="text-center">
+              {/* Circular Image with Yellow Laurel Ring */}
+              <div className="relative flex items-center justify-center">
+                <div className="w-28 h-28 rounded-full border-4 border-yellow-400 flex items-center justify-center p-1 shadow-md">
+                  <img
+                    src={officer.img}
+                    alt={officer.name}
+                    className="rounded-full w-full h-full object-cover"
+                  />
+                </div>
+                {/* Laurel Ring using CSS pseudo element */}
+                <div className="absolute -z-10 w-36 h-36 rounded-full border-4 border-yellow-400 opacity-70 blur-[0.5px]"></div>
               </div>
-              {/* Laurel Ring using CSS pseudo element */}
-              <div className="absolute -z-10 w-36 h-36 rounded-full border-4 border-yellow-400 opacity-70 blur-[0.5px]"></div>
-            </div>
 
-            {/* Officer Info */}
-            <h3 className="mt-4 font-semibold text-gray-800 leading-snug">
-              {officer.name}
-            </h3>
-            <p className="text-sm font-semibold text-gray-700 mt-1">
-              {officer.title}
-            </p>
-            {officer.subtitle && (
-              <p className="text-sm text-gray-500">{officer.subtitle}</p>
-            )}
+              {/* Officer Info */}
+              <h3 className="mt-4 font-semibold text-gray-800 leading-snug">
+                {officer.name}
+              </h3>
+              <p className="text-sm font-semibold text-gray-700 mt-1">
+                {officer.title}
+              </p>
+              {officer.subtitle && (
+                <p className="text-sm text-gray-500">{officer.subtitle}</p>
+              )}
 
-            {/* Know More Button */}
-            {/* <button className="mt-4 px-4 py-1.5 border border-blue-700 text-blue-700 rounded-md hover:bg-blue-700 hover:text-white transition duration-300"> */}
+              {/* Know More Button */}
+              {/* <button className="mt-4 px-4 py-1.5 border border-blue-700 text-blue-700 rounded-md hover:bg-blue-700 hover:text-white transition duration-300"> */}
               {/* Know More */}
-            {/* </button> */}
-          </div>
-        ))}
+              {/* </button> */}
+            </div>
+          ))}
         </div>
 
         {/* View All Faculty CTA */}

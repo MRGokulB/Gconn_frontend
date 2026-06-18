@@ -36,8 +36,8 @@ export default function Navbar() {
               <Link to="/" className="flex items-center gap-3">
                 <img src={Logo} alt="MUHS Logo" className="h-12 w-12 object-contain" />
                 <div>
-                  <h1 className="text-lg font-bold">GOVERNMENT COLLEGE OF NURSING, VISHNUPURI, NANDED</h1>
-                  <p className="text-xs text-gray-600">सरकारी नर्सिंग महाविद्यालय, विष्णुपुरी, नांदेड़</p>
+                  <h1 className="text-lg font-bold">Government College of Nursing (B.Sc.), Vishnupuri, Nanded</h1>
+                  <p className="text-xs text-gray-600">शासकीय परिचर्या महाविद्यालय (बी. एस्सी.), विष्णुपुरी, नांदेड</p>
                 </div>
               </Link>
             </div>

@@ -9,7 +9,7 @@ const Footer = () => {
         {/* Contact Info */}
         <div>
           <h3 className="text-xl font-bold text-white mb-4">Contact Us</h3>
-          <p className="mb-1">Government College of Nursing</p>
+          <p className="mb-1">Government College of Nursing (B.Sc.)</p>
           <p className="mb-1">Dr. Shankarrao Chavan Government Medical College and Hospital</p>
           <p className="mb-2">Vishnupuri, Nanded - 431 606, Maharashtra</p>
           <p className="mb-1">
@@ -54,7 +54,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400 text-sm">
-        © {new Date().getFullYear()} Government College of Nursing, Nanded. All rights reserved.
+        © {new Date().getFullYear()} Government College of Nursing (B.Sc.), Nanded. All rights reserved.
       </div>
     </footer>
   );

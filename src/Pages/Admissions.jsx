@@ -14,7 +14,7 @@ const Admissions = () => {
         "SC/ST/OBC: minimum 40% in PCB.",
         "English is compulsory in 10+2.",
         "Medically fit.",
-        "NEET exam applicable.",
+        "NEET/CET exam applicable.",
         "Admission as per norms of I.N.C, M.U.H.S., DMER, and statutory bodies.",
       ],
     },
