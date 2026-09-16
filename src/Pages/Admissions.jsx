@@ -1,8 +1,21 @@
 import React, { useState } from "react";
-import { GraduationCap, ClipboardList, Users, Briefcase, CheckCircle, Quote } from "lucide-react";
+import { GraduationCap, ClipboardList, Users, Briefcase, CheckCircle, Quote, FileText, Download, Eye, ExternalLink } from "lucide-react";
 
 const Admissions = () => {
   const sections = [
+    {
+      id: "admission-brochure",
+      title: "Admission Brochure",
+      icon: FileText,
+      isBrochure: true,
+      pdfUrl: "/assets/Annexures All/Annexures 2026-27/Admission Brousher.pdf",
+      content: [
+        "Official B.Sc. Nursing Admission Brochure for Academic Year 2026-27.",
+        "Detailed eligibility criteria, intake capacity, and admission guidelines.",
+        "Complete information on statutory body norms (I.N.C., M.U.H.S., DMER).",
+        "View online or download the official PDF brochure directly.",
+      ],
+    },
     {
       id: "eligibility",
       title: "Eligibility Criteria",
@@ -87,6 +100,33 @@ const Admissions = () => {
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Join us in shaping the future of healthcare through excellence in nursing education
           </p>
+
+          {/* Brochure Quick Access CTA Banner */}
+          <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-3 bg-white border border-indigo-100 p-3 sm:p-4 rounded-2xl shadow-sm">
+            <div className="flex items-center gap-2 text-indigo-900 font-semibold text-sm sm:text-base">
+              <FileText className="h-5 w-5 text-indigo-600 flex-shrink-0" />
+              <span>B.Sc. Nursing Admission Brochure (2026-27)</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <a
+                href="/assets/Annexures All/Annexures 2026-27/Admission Brousher.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3.5 py-1.5 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 rounded-lg text-xs sm:text-sm font-medium transition-colors"
+              >
+                <Eye className="h-4 w-4" />
+                <span>View PDF</span>
+              </a>
+              <a
+                href="/assets/Annexures All/Annexures 2026-27/Admission Brousher.pdf"
+                download="BSc_Nursing_Admission_Brochure_2026-27.pdf"
+                className="flex items-center gap-1.5 px-3.5 py-1.5 bg-indigo-600 text-white hover:bg-indigo-700 rounded-lg text-xs sm:text-sm font-medium transition-colors shadow-sm"
+              >
+                <Download className="h-4 w-4" />
+                <span>Download Brochure</span>
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Tabs Navigation */}
@@ -123,23 +163,51 @@ const Admissions = () => {
             {activeSection && (
               <>
                 {/* Section Header */}
-                <div className="flex items-start gap-4 mb-6 pb-6 border-b border-gray-200">
-                  <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-indigo-50 rounded-xl flex items-center justify-center">
-                    {React.createElement(activeSection.icon, {
-                      className: "h-6 w-6 sm:h-7 sm:w-7 text-indigo-600"
-                    })}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-gray-200">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-indigo-50 rounded-xl flex items-center justify-center">
+                      {React.createElement(activeSection.icon, {
+                        className: "h-6 w-6 sm:h-7 sm:w-7 text-indigo-600"
+                      })}
+                    </div>
+                    <div>
+                      <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
+                        {activeSection.title}
+                      </h2>
+                      {activeSection.isBrochure && (
+                        <span className="inline-block px-2.5 py-0.5 bg-indigo-100 text-indigo-800 text-xs font-semibold rounded-full">
+                          Academic Year 2026-27
+                        </span>
+                      )}
+                    </div>
                   </div>
-                  <div>
-                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-                      {activeSection.title}
-                    </h2>
-                    <p className=" ">
-                     </p>
-                  </div>
+
+                  {activeSection.isBrochure && (
+                    <div className="flex items-center gap-2">
+                      <a
+                        href={activeSection.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 rounded-xl text-sm font-semibold transition-colors"
+                      >
+                        <Eye className="h-4 w-4" />
+                        <span>Open PDF</span>
+                        <ExternalLink className="h-3.5 w-3.5 opacity-70" />
+                      </a>
+                      <a
+                        href={activeSection.pdfUrl}
+                        download="BSc_Nursing_Admission_Brochure_2026-27.pdf"
+                        className="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-sm font-semibold transition-colors shadow-sm"
+                      >
+                        <Download className="h-4 w-4" />
+                        <span>Download</span>
+                      </a>
+                    </div>
+                  )}
                 </div>
 
                 {/* Content List */}
-                <div className="space-y-4">
+                <div className="space-y-4 mb-8">
                   {activeSection.content.map((item, index) => (
                     <div
                       key={index}
@@ -154,6 +222,32 @@ const Admissions = () => {
                     </div>
                   ))}
                 </div>
+
+                {/* Embedded PDF Viewer for Brochure */}
+                {activeSection.isBrochure && (
+                  <div className="mt-6 border border-gray-200 rounded-2xl overflow-hidden shadow-inner bg-slate-900">
+                    <div className="bg-slate-800 px-4 py-3 border-b border-slate-700 flex items-center justify-between text-white text-xs sm:text-sm">
+                      <div className="flex items-center gap-2">
+                        <FileText className="h-4 w-4 text-indigo-400" />
+                        <span className="font-medium truncate">Admission Brousher (2026-27).pdf</span>
+                      </div>
+                      <a
+                        href={activeSection.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-indigo-300 hover:text-white flex items-center gap-1 text-xs"
+                      >
+                        <span>Full Screen</span>
+                        <ExternalLink className="h-3 w-3" />
+                      </a>
+                    </div>
+                    <iframe
+                      src={activeSection.pdfUrl}
+                      title="B.Sc. Nursing Admission Brochure 2026-27"
+                      className="w-full h-[650px] border-0"
+                    />
+                  </div>
+                )}
               </>
             )}
           </div>

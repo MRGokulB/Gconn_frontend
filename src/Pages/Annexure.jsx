@@ -68,6 +68,7 @@ const YEAR_FILES = {
     "ANNEXURE XVI.pdf",
   ],
   "Annexures 2026-27": [
+    "Admission Brousher.pdf",
     "Annexure  I.pdf",
     "Annexure  II.pdf",
     "Annexure  III.pdf",
