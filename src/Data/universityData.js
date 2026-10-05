@@ -102,13 +102,11 @@ const universityData = {
 
   facultyMembers: [
     {
-      name: 'Prof. Bhimu Chakre',
-      image: "/assets/images/Faculty/ChakreBP.jpg",
+      name: 'Mr. Sharad Kendre',
+      image: "/assets/images/Faculty/Kendre Sharad.jpeg",
       title: 'Principal • Mental Health Nursing',
-      email: 'bpchakre@gmail.com',
-      bio: `Mental health is an essential pillar of healthcare, influencing every aspect of an individual's life and well-being. As Vice Principal and faculty in Mental Health Nursing, I am dedicated to shaping nurses who can deliver holistic, empathetic, and evidence-based care. My goal is to foster a deeper understanding of the human mind and its connection to overall health, preparing students to respond compassionately and competently to mental health challenges.
-        At our institution, we provide an environment that prioritizes emotional intelligence, patient-centered care, and interdisciplinary collaboration. I guide students to develop strong clinical judgment while nurturing empathy and communication — two core values of mental health nursing. We encourage active learning through case studies, role-play, and reflective discussions, ensuring that students become confident and sensitive caregivers.
-        I believe that nursing education is not just about clinical training but about nurturing humanity within healthcare. Together, we aim to create professionals who advocate for mental health awareness, break societal stigmas, and contribute to a world that values emotional well-being as much as physical health.`
+      email: 'sharadkendre777@gmail.com',
+      bio: `Welcome to Government  College Of Nursing Dr.Shankarrao Chavan Government Medical College And Hospital Vishnupuri,Nanded very prestigious College of Nursing, an institution dedicated to cultivating compassionate, competent, and highly skilled healthcare professionals through the pursuit of academic rigor and clinical excellence. As the administrative and academic head, it is my distinct privilege to lead an esteemed faculty and staff committed to nurturing the next generation of nursing leaders by providing value-based education, state-of-the-art laboratory training, and extensive clinical exposure. We firmly believe that education extends far beyond textbooks; it is a transformative journey that refines the mind, character, and spirit, enabling our students to serve humanity selflessly across diverse cultural and medical settings. In an era where the global healthcare industry is rapidly evolving, we strive to equip our future nurses with critical thinking, ethical integrity, and a never-give-up attitude, ensuring they transition into innovative care providers and trailblazers in medicine. We deeply appreciate the trust that parents place in us and warmly welcome all aspiring students to join us in this meaningful academic journey toward professional mastery and holistic personal growth`
     },
     {
       name: 'Prof. Balaji Nangrale',
@@ -118,16 +116,6 @@ const universityData = {
       bio: `College of Nursing, proposes to prepare nurses for global healthcare industry. The health care needs of people are dynamic and are more challenging with emerging new diseases and increasing load of non-communicable diseases. The nurses today have their roles expanded from traditional care giving to their contributions in preventive and promotive aspects of health. Our college with its state of the art facilities shall be one of the best college of nursing in the Nanded district and Marathawada region of Maharashtra.
         Today, alternative and complementary modalities of treatment is accessible and affordable to people of all classes. Nurses need to be trained in caring for clients choosing from these diverse treatment modalities. The books of nursing demand inclusions of extensive literature related to caring the patients opting such modalities. This college is committed to fulfil these demands of the present client. As head of the College of Nursing, I feel privileged to be part of a visionary group committed to social cause and quality health professional's education.
         The pass outs can work as Registered nurse in Government/ private Hospitals, medical institutes, colleges, etc. The candidates have great demand in national as well as international health care sectors. Also they can pursue higher education in M.Sc nursing which enables them to seek teaching profession in Nursing.`
-    },
-    {
-      name: 'Mr. Sharad Kendre',
-      image: "/assets/images/Faculty/Kendre Sharad.jpeg",
-      title: 'Assistant Professor • Mental Health Nursing',
-      email: 'sharadkendre777@gmail.com',
-      bio: `A professor specializing in Mental Health (Psychiatric) Nursing operates at the intersection of clinical expertise, academic research, and advocacy. Their focus is not just on treating illness, but on the holistic "recovery model" and the psychological well-being of both patients and the student nurses they mentor.
-        Psychiatric nursing education plays a vital role in preparing nursing students to meet the growing mental health needs of individuals and communities. As a Mental health professional and Assistant Professor in an Institute of Nursing, my responsibilities are guiding, teaching, and mentoring students to become competent and compassionate mental health professionals.
-        My focus goes far beyond just delivering lectures. It centers on shaping competent, empathetic, and mentally aware nurses who can handle real-life psychological and emotional challenges in patients.
-        My role in an Institute of Nursing is crucial in shaping the future workforce of mental health services. Through effective teaching, clinical supervision, and mentorship, the educator ensures the development of skilled, ethical, and compassionate nurses capable of providing holistic mental health care in both hospital and community settings.`
     },
     {
       name: 'Ms. Chandbibi Pathan',

@@ -2,26 +2,26 @@ import React from "react";
 import { GraduationCap, Heart } from "lucide-react";
 
 const NangraleImg = "/assets/images/Faculty/Nangrale B B.jpg";
-const ChakreImg = "/assets/images/Faculty/ChakreBP.jpg";
 const ChandbibiImg = "/assets/images/Faculty/Pathan C H.jpg";
 const ShaikhImg = "/assets/images/Faculty/Shaikh.jpg";
 const DeshmaneImg = "/assets/images/Faculty/Deshmane U B.jpg";
 const MadleImg = "/assets/images/Faculty/Madle P A.jpg";
+const KendreImg = "/assets/images/Faculty/Kendre Sharad.jpeg";
 
 const officers = [
   {
-    name: "Prof. Balaji Nangrale",
+    name: "Prof. Sharad Kendre",
     title: "Principal",
-    specialty: "Medical Surgical Oncology Nursing",
-    img: NangraleImg,
+    specialty: "Mental Health Nursing",
+    img: KendreImg,
     isPrincipal: true,
   },
   {
-    name: "Prof. Bhimu Chakre",
+    name: "Prof. Balaji Nangrale",
     title: "Vice Principal",
-    specialty: "Mental Health Nursing",
-    img: ChakreImg,
-    isVicePrincipal: true,
+    specialty: "Medical Surgical Oncology Nursing",
+    img: NangraleImg,
+    isPrincipal: true,
   },
   {
     name: "Ms. Chandbibi Pathan",
