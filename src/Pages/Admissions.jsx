@@ -20,12 +20,39 @@ import {
   Clock,
   ListOrdered,
   Search,
+  ArrowRight,
 } from "lucide-react";
 
+const RESIDUAL_VACANCY_PDF = "/assets/Admissions/Residual%20Vacc.pdf";
 const INSTITUTIONAL_ROUND_PDF =
   "/assets/Admissions/Gen%20Merit%20list%20,%20Selection%20List%20and%20Waiting%20list%20For%20Institution%20Round.pdf";
 const BROCHURE_PDF =
   "/assets/Annexures%20All/Annexures%202026-27/Admission%20Brousher.pdf";
+
+// Official data from Residual Vacancy Notification (Ref: क्र. डॉ. शं. च. शापमनां / बीएससीन / विद्यार्थी प्रवेश / 1113 / 26, Date: 30/10/2026)
+const RESIDUAL_VACANCY_DATA = {
+  refNo: "क्र. डॉ. शं. च. शापमनां / बीएससीन / विद्यार्थी प्रवेश / 1113 / 26",
+  date: "30/10/2026 (सायंकाळी ६.३० नंतर)",
+  subject:
+    "डॉ शंकरराव चव्हाण शासकीय वैद्यकिय महाविद्यालय व रुग्णालय, नांदेड येथे शासकीय परिचर्या (बीएस्सी) महाविद्यालयात २०२६-२७ या शैक्षणिक वर्षात विद्यार्थी संस्थात्मक फेरीमध्ये प्रवेश घेण्या करीता तीन जागा रिक्त असल्याचे प्रदर्शित करणे बाबत...",
+  reference:
+    "No. MED-1026/C.R.No.07/New Registration/Cap3 & Inst. Level Round/2484 Date 17/10/2026",
+  to: "मा. आयुक्त तथा प्राधिकार अधिकारी, महाराष्ट्र राज्य सी ई टी सेल, मुंबई",
+  copiesTo: [
+    "माहितीस्तव, मा. आयुक्त, वैद्यकिय शिक्षण व संशोधन, मुंबई (DMER, Mumbai)",
+    "सुचनाफलक, शासकीय परिचर्या महाविद्यालय, नांदेड (Notice Board)",
+  ],
+  stats: {
+    applied: 12,
+    allotted: 7,
+    admitted: 4,
+    vacant: 3,
+  },
+  marathiContent:
+    "उपरोक्त संदर्भिय विषयास अनुसरुन डॉ शंकरराव चव्हाण शासकीय वैद्यकिय महाविद्यालय व रुग्णालय, नांदेड येथील शासकीय परिचर्या महाविद्यालय बीएस्सी नर्सिंग अभ्यासक्रम करीता संस्थात्मक फेरीद्वारे प्रवेश घेण्याकरीता दिनांक २८/१०/२०२६ ते २९/१०/२०२६ या दोन दिवसाच्या कालावधीत एकुन १२ विद्यार्थी हजर होऊन बीएस्सी नर्सिंग करीता विनंती अर्ज सादर केलेले आहेत. सदर प्राप्त अर्जाची छाननी करुन निवड यादी प्रदर्शित करण्यात आलेली होती. त्यापैकी चार विद्यार्थ्यांनी दिनांक ३०/१०/२०२६ रोजी विहीत कालावधीत प्रवेश केला आहे. तरी सद्यस्थितीत आता एकुण तीन रिक्त जागा प्रदर्शित करण्यात येत आहेत. (दि-३०/१०/२०२६ सायंकाळी ६.३० नंतर)",
+  englishSummary:
+    "In accordance with the State CET Cell notification for the Institutional Level Round for B.Sc. Nursing (Academic Year 2026-27), a total of 12 eligible candidates registered and submitted application forms in person between 28/10/2026 and 29/10/2026. Following document scrutiny and publication of the selection list, 4 candidates confirmed their admission within the prescribed schedule on 30/10/2026. As of 30/10/2026 (after 6:30 PM), exactly 3 residual seats remain vacant and have been submitted to the State CET Cell, Mumbai and notified on the college notice board.",
+};
 
 // Official data from Institutional Level Round Notification (Ref: No. Dr. SCGCONN/Bsc Nursing adm/1096-1099/2026)
 const VACANT_SEATS_DATA = [
@@ -189,16 +216,38 @@ const GENERAL_MERIT_LIST = [
 ];
 
 const Admissions = () => {
-  const [activeTab, setActiveTab] = useState("institutional-round");
+  const [activeTab, setActiveTab] = useState("residual-vacancy");
   const [activeListSubTab, setActiveListSubTab] = useState("selection"); // "selection" | "waiting" | "merit"
   const [searchQuery, setSearchQuery] = useState("");
 
   const sections = [
     {
+      id: "residual-vacancy",
+      title: "Residual Vacancy",
+      badge: "03 Seats Vacant",
+      isUrgent: true,
+      icon: AlertCircle,
+      fullTitle:
+        "Institutional Round Residual Vacancy Notice (३ शिल्लक रिक्त जागा)",
+      subtitle:
+        "Ref: क्र. डॉ. शं. च. शापमनां / बीएससीन / विद्यार्थी प्रवेश / 1113 / 26 | Date: 30/10/2026 (After 6:30 PM)",
+      tag: "Latest Notice • 30 Oct 2026",
+      downloadUrl: RESIDUAL_VACANCY_PDF,
+      downloadName: "BSc_Nursing_Residual_Vacancy_Notice_30_10_2026.pdf",
+      instructions: [
+        "Institutional Round Admissions: Conducted under the 85% state institutional quota for remaining seats post Centralized Admission Process (CAP) rounds.",
+        "Applications Received: A total of 12 eligible candidates registered and submitted application forms in person between 28/10/2026 and 29/10/2026 at the College Office.",
+        "Admissions Executed: Following scrutiny of applications, 4 selected candidates completed admission formalities within the prescribed schedule on 30/10/2026.",
+        "Residual Vacancy Status: As of 30/10/2026 (after 6:30 PM), exactly three (03) seats remain vacant (Residual Vacancy) for further operation.",
+        "Administrative Submission: The official vacancy statement has been submitted to the Commissioner & Competent Authority, State CET Cell, Mumbai and copied to DMER Mumbai.",
+        "Notice Board Display: Notice has been displayed on the institutional notice board of Government College of Nursing, Dr. S.C.G.M.C. Campus, Vishnupuri, Nanded.",
+        "Statutory Norms: All subsequent seat operations remain strictly provisional and governed by State CET Cell and MUHS Nashik directives.",
+      ],
+    },
+    {
       id: "institutional-round",
       title: "Institutional Round",
       badge: "Vacant Seats Round",
-      isUrgent: true,
       icon: FileCheck,
       fullTitle:
         "B.Sc Nursing Admission Institutional Level Round for Vacant Seats after CAP Round",
@@ -358,24 +407,63 @@ const Admissions = () => {
           </p>
 
           {/* Quick Notice Cards */}
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto text-left">
-            {/* Notice 1: Institutional Level Round */}
-            <div className="relative bg-gradient-to-br from-amber-50/90 via-white to-amber-50/40 border-2 border-amber-300 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto text-left">
+            {/* Notice 1: Residual Vacancy (Latest) */}
+            <div className="relative bg-gradient-to-br from-rose-50/90 via-white to-amber-50/40 border-2 border-rose-300 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-2 mb-2.5">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-amber-500 text-white text-xs font-bold rounded-full uppercase tracking-wider shadow-xs">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-rose-600 text-white text-xs font-bold rounded-full uppercase tracking-wider shadow-xs">
                     <Bell className="h-3.5 w-3.5 animate-pulse" />
                     Latest Notice
                   </span>
-                  <span className="text-xs font-semibold text-amber-900 bg-amber-100/80 px-2 py-0.5 rounded border border-amber-200">
-                    7 Vacant Seats
+                  <span className="text-xs font-bold text-rose-800 bg-rose-100/90 px-2.5 py-0.5 rounded border border-rose-200">
+                    3 Residual Seats
                   </span>
                 </div>
                 <h2 className="text-base sm:text-lg font-bold text-gray-900 leading-snug">
-                  B.Sc Nursing Admission Institutional Level Round for Vacant Seats after CAP Round
+                  Residual Vacancy Notice (Institutional Level Round)
                 </h2>
                 <p className="text-xs sm:text-sm text-gray-600 mt-1.5 leading-relaxed">
-                  General Merit list, Selection list and Waiting list for institutional level round.
+                  Official notification (Ref: 1113/26, 30/10/2026) regarding 3 residual vacant seats remaining after 4 admissions.
+                </p>
+              </div>
+
+              <div className="mt-4 pt-3 border-t border-rose-200/70 flex flex-wrap items-center gap-2">
+                <button
+                  onClick={() => handleSelectSection("residual-vacancy")}
+                  className="flex-1 min-w-[130px] flex items-center justify-center gap-1.5 px-3 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs sm:text-sm font-semibold transition-colors shadow-xs"
+                >
+                  <Eye className="h-4 w-4" />
+                  <span>View Vacancy Notice</span>
+                </button>
+                <a
+                  href={RESIDUAL_VACANCY_PDF}
+                  download="BSc_Nursing_Residual_Vacancy_Notice_30_10_2026.pdf"
+                  className="flex items-center justify-center gap-1.5 px-3 py-2 bg-white hover:bg-rose-50 text-rose-900 border border-rose-300 rounded-xl text-xs sm:text-sm font-semibold transition-colors"
+                >
+                  <Download className="h-4 w-4" />
+                  <span>Download PDF</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Notice 2: Institutional Level Round */}
+            <div className="relative bg-gradient-to-br from-amber-50/90 via-white to-amber-50/40 border border-amber-300 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-2.5">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-amber-500 text-white text-xs font-bold rounded-full uppercase tracking-wider shadow-xs">
+                    <FileCheck className="h-3.5 w-3.5" />
+                    Round 1 Lists
+                  </span>
+                  <span className="text-xs font-semibold text-amber-900 bg-amber-100/80 px-2 py-0.5 rounded border border-amber-200">
+                    7 Seats Allotment
+                  </span>
+                </div>
+                <h2 className="text-base sm:text-lg font-bold text-gray-900 leading-snug">
+                  Institutional Round Selection & Waiting Lists
+                </h2>
+                <p className="text-xs sm:text-sm text-gray-600 mt-1.5 leading-relaxed">
+                  General Merit list, Selection list (7 seats) and Waiting list for institutional level round.
                 </p>
               </div>
 
@@ -385,7 +473,7 @@ const Admissions = () => {
                   className="flex-1 min-w-[130px] flex items-center justify-center gap-1.5 px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs sm:text-sm font-semibold transition-colors shadow-xs"
                 >
                   <Eye className="h-4 w-4" />
-                  <span>View Lists & Instructions</span>
+                  <span>View Lists</span>
                 </button>
                 <a
                   href={INSTITUTIONAL_ROUND_PDF}
@@ -398,7 +486,7 @@ const Admissions = () => {
               </div>
             </div>
 
-            {/* Notice 2: Admission Brochure */}
+            {/* Notice 3: Admission Brochure */}
             <div className="relative bg-white border border-indigo-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-2 mb-2.5">
@@ -424,7 +512,7 @@ const Admissions = () => {
                   className="flex-1 min-w-[130px] flex items-center justify-center gap-1.5 px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs sm:text-sm font-semibold transition-colors shadow-xs"
                 >
                   <Eye className="h-4 w-4" />
-                  <span>View Brochure Details</span>
+                  <span>View Brochure</span>
                 </button>
                 <a
                   href={BROCHURE_PDF}
@@ -527,9 +615,243 @@ const Admissions = () => {
               )}
             </div>
 
+            {/* RESIDUAL VACANCY SPECIAL VIEW */}
+            {activeSection.id === "residual-vacancy" && (
+              <div className="space-y-8">
+                {/* Important Notice Alert */}
+                <div className="p-4 sm:p-5 bg-rose-50/90 border border-rose-200 rounded-2xl flex items-start gap-3.5 shadow-2xs">
+                  <AlertCircle className="h-5 w-5 text-rose-600 flex-shrink-0 mt-0.5" />
+                  <div className="text-xs sm:text-sm text-rose-950 leading-relaxed">
+                    <strong className="font-bold">Official Residual Vacancy Notification (दिनांक ३०/१०/२०२६):</strong>{" "}
+                    Out of the 7 vacant seats announced for the Institutional Level Round, 4 candidates have completed their admission within the prescribed schedule. As of 30/10/2026 (after 6:30 PM), exactly{" "}
+                    <strong className="font-bold text-rose-700 underline decoration-rose-400 underline-offset-2">
+                      3 Residual Vacant Seats (३ शिल्लक रिक्त जागा)
+                    </strong>{" "}
+                    remain. This vacancy status has been submitted to the Commissioner & Competent Authority, State CET Cell, Mumbai and displayed on the college notice board.
+                  </div>
+                </div>
+
+                {/* Seat Progression Metrics Grid */}
+                <div className="bg-gradient-to-br from-slate-50 via-white to-rose-50/30 border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-2xs">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-3 border-b border-slate-200">
+                    <div>
+                      <h3 className="text-base sm:text-lg font-bold text-gray-900 flex items-center gap-2">
+                        <Award className="h-5 w-5 text-indigo-600" />
+                        <span>Admission Round Seat Progression (प्रवेश फेरी स्थिती)</span>
+                      </h3>
+                      <p className="text-xs text-gray-500 mt-0.5">
+                        Breakdown of applications, allotments, confirmed admissions, and residual vacant seats
+                      </p>
+                    </div>
+                    <span className="inline-flex items-center px-3 py-1 bg-rose-600 text-white text-xs font-bold rounded-lg shadow-xs self-start sm:self-auto">
+                      Current Residual Vacancy: 03 Seats
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+                    <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-2xs">
+                      <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">
+                        Applications Received
+                      </div>
+                      <div className="text-2xl sm:text-3xl font-extrabold text-gray-900">
+                        {RESIDUAL_VACANCY_DATA.stats.applied.toString().padStart(2, "0")}
+                      </div>
+                      <div className="text-[11px] text-slate-500 mt-1">
+                        Applied 28–29 Oct 2026
+                      </div>
+                    </div>
+
+                    <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-2xs">
+                      <div className="text-[11px] font-bold text-amber-600 uppercase tracking-wider mb-1">
+                        Initial Vacant Seats
+                      </div>
+                      <div className="text-2xl sm:text-3xl font-extrabold text-gray-900">
+                        {RESIDUAL_VACANCY_DATA.stats.allotted.toString().padStart(2, "0")}
+                      </div>
+                      <div className="text-[11px] text-amber-700 mt-1">
+                        Institutional Round Quota
+                      </div>
+                    </div>
+
+                    <div className="bg-white border border-slate-200 rounded-xl p-4 shadow-2xs">
+                      <div className="text-[11px] font-bold text-emerald-600 uppercase tracking-wider mb-1">
+                        Admissions Confirmed
+                      </div>
+                      <div className="text-2xl sm:text-3xl font-extrabold text-emerald-700">
+                        {RESIDUAL_VACANCY_DATA.stats.admitted.toString().padStart(2, "0")}
+                      </div>
+                      <div className="text-[11px] text-emerald-700 mt-1">
+                        Reported on 30/10/2026
+                      </div>
+                    </div>
+
+                    <div className="bg-white border-2 border-rose-300 rounded-xl p-4 shadow-xs">
+                      <div className="text-[11px] font-bold text-rose-600 uppercase tracking-wider mb-1">
+                        Residual Vacancy
+                      </div>
+                      <div className="text-2xl sm:text-3xl font-extrabold text-rose-700">
+                        {RESIDUAL_VACANCY_DATA.stats.vacant.toString().padStart(2, "0")}
+                      </div>
+                      <div className="text-[11px] font-bold text-rose-700 mt-1">
+                        Remaining (३ रिक्त जागा)
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Official Administrative Details Card */}
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 sm:p-6 space-y-4">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b border-slate-200">
+                    <div>
+                      <span className="text-[11px] font-bold text-indigo-700 uppercase tracking-wider block">
+                        Government Medical College & Hospital Campus, Nanded
+                      </span>
+                      <h4 className="text-base sm:text-lg font-bold text-gray-900">
+                        Official Notification Details (प्रशासकीय पत्र तपशील)
+                      </h4>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2 text-xs">
+                      <span className="bg-white px-2.5 py-1 rounded-md border border-slate-200 text-slate-700 font-mono">
+                        {RESIDUAL_VACANCY_DATA.refNo}
+                      </span>
+                      <span className="bg-rose-100 text-rose-800 px-2.5 py-1 rounded-md font-semibold border border-rose-200">
+                        {RESIDUAL_VACANCY_DATA.date}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 text-xs sm:text-sm">
+                    <div className="bg-white p-3.5 rounded-xl border border-slate-200">
+                      <span className="text-slate-500 font-semibold block mb-0.5">प्रति (Submitted To):</span>
+                      <p className="font-bold text-gray-900">{RESIDUAL_VACANCY_DATA.to}</p>
+                    </div>
+                    <div className="bg-white p-3.5 rounded-xl border border-slate-200">
+                      <span className="text-slate-500 font-semibold block mb-0.5">संदर्भ (Reference):</span>
+                      <p className="font-mono text-gray-800 text-xs">{RESIDUAL_VACANCY_DATA.reference}</p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <span className="text-xs font-bold text-indigo-700 uppercase tracking-wider block mb-1">
+                      विषय (Official Subject):
+                    </span>
+                    <p className="text-xs sm:text-sm font-semibold text-gray-900 bg-white p-3.5 rounded-xl border border-slate-200 leading-relaxed">
+                      {RESIDUAL_VACANCY_DATA.subject}
+                    </p>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <span className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
+                      अधिसूचना मजकूर (Official Notification Body in Marathi):
+                    </span>
+                    <div className="p-4 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm text-gray-800 leading-relaxed">
+                      {RESIDUAL_VACANCY_DATA.marathiContent}
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <span className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
+                      English Summary:
+                    </span>
+                    <div className="p-4 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm text-gray-700 leading-relaxed">
+                      {RESIDUAL_VACANCY_DATA.englishSummary}
+                    </div>
+                  </div>
+
+                  <div className="pt-3 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-slate-600">
+                    <div>
+                      <strong className="text-slate-800">Signing Authority: </strong>
+                      Principal, Govt. College of Nursing, Dr. S.C.G.M.C. & Hospital, Vishnupuri, Nanded
+                    </div>
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <span className="px-2 py-0.5 bg-slate-200/80 rounded font-medium text-slate-700">
+                        Copy to: DMER Mumbai
+                      </span>
+                      <span className="px-2 py-0.5 bg-slate-200/80 rounded font-medium text-slate-700">
+                        College Notice Board
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Signed PDF Document Viewer & Actions */}
+                <div className="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-xs">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
+                    <div>
+                      <h3 className="text-base font-bold text-gray-900 flex items-center gap-2">
+                        <FileCheck className="h-5 w-5 text-indigo-600" />
+                        <span>Official Signed Notice Document (मुळ स्वाक्षरी पत्र)</span>
+                      </h3>
+                      <p className="text-xs text-gray-500 mt-0.5">
+                        Duly signed and stamped copy submitted to State CET Cell, Mumbai (Ref: 1113/26)
+                      </p>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-2">
+                      <a
+                        href={RESIDUAL_VACANCY_PDF}
+                        download="BSc_Nursing_Residual_Vacancy_Notice_30_10_2026.pdf"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs sm:text-sm font-semibold transition-colors shadow-xs"
+                      >
+                        <Download className="h-4 w-4" />
+                        <span>Download Signed PDF (205 KB)</span>
+                      </a>
+                      <a
+                        href={RESIDUAL_VACANCY_PDF}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs sm:text-sm font-semibold transition-colors border border-slate-200"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        <span>Open in New Tab</span>
+                      </a>
+                      <button
+                        onClick={() => handleSelectSection("institutional-round")}
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 rounded-xl text-xs sm:text-sm font-semibold transition-colors"
+                      >
+                        <Eye className="h-4 w-4" />
+                        <span>View Merit & Selection Lists</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Embedded PDF Preview */}
+                  <div className="mt-4">
+                    <div className="w-full h-[650px] rounded-xl overflow-hidden border border-slate-200 bg-slate-50 shadow-inner">
+                      <iframe
+                        src={`${RESIDUAL_VACANCY_PDF}#toolbar=0`}
+                        className="w-full h-full"
+                        title="Official Residual Vacancy Notification PDF"
+                      />
+                    </div>
+                    <p className="text-center text-xs text-slate-500 mt-2 sm:hidden">
+                      Note: If the PDF preview does not display on your mobile device, please tap "Download Signed PDF" or "Open in New Tab" above.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* INSTITUTIONAL ROUND SPECIAL VIEWS (NO PDF EMBED) */}
             {activeSection.id === "institutional-round" && (
               <div className="space-y-8">
+                {/* Residual Vacancy Alert Banner */}
+                <div className="p-4 bg-gradient-to-r from-rose-50 via-amber-50 to-rose-50 border border-rose-300 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs">
+                  <div className="flex items-start gap-3">
+                    <Bell className="h-5 w-5 text-rose-600 flex-shrink-0 mt-0.5 animate-pulse" />
+                    <div className="text-xs sm:text-sm text-gray-900">
+                      <strong className="font-bold text-rose-700">Notice Update (30/10/2026):</strong> Out of the 7 allotted seats below, 4 candidates have completed their admission. Exactly <strong className="font-bold text-rose-800">3 Residual Vacant Seats</strong> remain available.
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => handleSelectSection("residual-vacancy")}
+                    className="self-start sm:self-auto inline-flex items-center gap-1.5 px-3 py-1.5 bg-rose-600 hover:bg-rose-700 text-white rounded-lg text-xs font-bold transition-colors whitespace-nowrap shadow-xs"
+                  >
+                    <span>View Residual Vacancy Notice</span>
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </button>
+                </div>
+
                 {/* Important Notice Alert */}
                 <div className="p-4 bg-amber-50/80 border border-amber-200 rounded-2xl flex items-start gap-3">
                   <AlertCircle className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
@@ -876,16 +1198,22 @@ const Admissions = () => {
               Visit the College of Nursing Admission Section at Dr. S.C.G.M.C. Campus, Vishnupuri, Nanded during official working hours (10:00 AM – 5:00 PM).
             </p>
           </div>
-          <div className="flex items-center gap-3 flex-shrink-0">
+          <div className="flex flex-wrap items-center gap-2.5 flex-shrink-0">
+            <button
+              onClick={() => handleSelectSection("residual-vacancy")}
+              className="px-4 py-2.5 bg-rose-600 hover:bg-rose-500 text-white rounded-xl text-xs sm:text-sm font-semibold transition-colors shadow-sm"
+            >
+              Residual Vacancy
+            </button>
             <button
               onClick={() => handleSelectSection("institutional-round")}
-              className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs sm:text-sm font-semibold transition-colors shadow-sm"
+              className="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs sm:text-sm font-semibold transition-colors shadow-sm"
             >
-              View Institutional Round
+              Institutional Round
             </button>
             <button
               onClick={() => handleSelectSection("admission-brochure")}
-              className="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs sm:text-sm font-semibold transition-colors border border-slate-700"
+              className="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs sm:text-sm font-semibold transition-colors border border-slate-700"
             >
               View Brochure
             </button>
