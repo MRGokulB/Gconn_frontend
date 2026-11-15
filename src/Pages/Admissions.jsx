@@ -26,6 +26,8 @@ import {
 const RESIDUAL_VACANCY_PDF = "/assets/Admissions/Residual%20Vacc.pdf";
 const INSTITUTIONAL_ROUND_PDF =
   "/assets/Admissions/Gen%20Merit%20list%20,%20Selection%20List%20and%20Waiting%20list%20For%20Institution%20Round.pdf";
+const INST_ROUND_2_PDF =
+  "/assets/Admissions/Inst_Round_2_Merit_Selection_Waiting_List.pdf";
 const BROCHURE_PDF =
   "/assets/Annexures%20All/Annexures%202026-27/Admission%20Brousher.pdf";
 
@@ -200,6 +202,107 @@ const WAITING_LIST = [
   },
 ];
 
+// ── Institutional Round 2 Data (Ref: No.Dr.SCGCONN/Bsc Nursing adm/1216/2026, Date: 12/11/2026)
+const INST2_VACANT_SEATS_DATA = [
+  { category: "NT-D", general: 1, women: 0, total: 1 },
+  { category: "OBC", general: 1, women: 0, total: 1 },
+];
+
+const INST2_SELECTION_LIST = [
+  {
+    sr: 1,
+    sml: "12611",
+    formNo: "266013593",
+    name: "BHAVRE SANDESH SHANKAR",
+    sex: "M",
+    cet: "27.33%",
+    category: "OBC",
+    selectedCategory: "OBC-Gen",
+    statusBadge: "bg-emerald-100 text-emerald-800 border-emerald-200",
+  },
+  {
+    sr: 2,
+    sml: "12543",
+    formNo: "266013160",
+    name: "PYATEKAR PRITI DHONDIBA",
+    sex: "F",
+    cet: "27.33%",
+    category: "NT-C",
+    selectedCategory: "Against NT-D",
+    statusBadge: "bg-blue-100 text-blue-800 border-blue-200",
+  },
+];
+
+const INST2_WAITING_LIST = [
+  {
+    group: "OBC - General Waiting",
+    candidates: [
+      {
+        sr: 1,
+        sml: "12781",
+        formNo: "266014168",
+        name: "SHIKHARE GAYATRI VISHWANATH",
+        sex: "F",
+        category: "OBC",
+        remark: "-",
+      },
+      {
+        sr: 2,
+        sml: "13388",
+        formNo: "266014518",
+        name: "PATKE ATHARAV SUDHIR",
+        sex: "M",
+        category: "OBC",
+        remark: "-",
+      },
+    ],
+  },
+  {
+    group: "Inter-Se Group III Waiting (NT-D)",
+    candidates: [
+      {
+        sr: 1,
+        sml: "12781",
+        formNo: "266014168",
+        name: "SHIKHARE GAYATRI VISHWANATH",
+        sex: "F",
+        category: "OBC",
+        remark: "-",
+      },
+      {
+        sr: 2,
+        sml: "13388",
+        formNo: "266014518",
+        name: "PATKE ATHARAV SUDHIR",
+        sex: "M",
+        category: "OBC",
+        remark: "-",
+      },
+      {
+        sr: 3,
+        sml: "13559",
+        formNo: "266014257",
+        name: "RUPNAR VISHAL ASHRUBA",
+        sex: "M",
+        category: "NT-C",
+        remark: "-",
+      },
+    ],
+  },
+];
+
+const INST2_GENERAL_MERIT_LIST = [
+  { sr: 1, sml: "8821.2", formNo: "266014593", name: "CHANDRE SHRUSHTI SUNIL", sex: "F", category: "SC", cet: "61.94%", hscPcb: "39%", remark: "-" },
+  { sr: 2, sml: "12061.1", formNo: "266014205", name: "GADEWAD MAYURI PIRAJI", sex: "F", category: "OPEN", cet: "36.71%", hscPcb: "61%", remark: "-" },
+  { sr: 3, sml: "12543", formNo: "266013160", name: "PYATEKAR PRITI DHONDIBA", sex: "F", category: "NT-C", cet: "27.33%", hscPcb: "58%", remark: "-" },
+  { sr: 4, sml: "12611", formNo: "266013593", name: "BHAVRE SANDESH SHANKAR", sex: "M", category: "OBC", cet: "27.33%", hscPcb: "44%", remark: "-" },
+  { sr: 5, sml: "12781", formNo: "266014168", name: "SHIKHARE GAYATRI VISHWANATH", sex: "F", category: "OBC", cet: "24.88%", hscPcb: "52%", remark: "-" },
+  { sr: 6, sml: "13388", formNo: "266014518", name: "PATKE ATHARAV SUDHIR", sex: "M", category: "OBC", cet: "11.64%", hscPcb: "49%", remark: "-" },
+  { sr: 7, sml: "13559", formNo: "266014257", name: "RUPNAR VISHAL ASHRUBA", sex: "M", category: "NT-C", cet: "7.16%", hscPcb: "56%", remark: "-" },
+  { sr: 8, sml: "3975.1", formNo: "266013412", name: "MUNDHE VAISHNAV VISHWANATH", sex: "M", category: "NT-D", cet: "83.85%", hscPcb: "73%", remark: "Candidate Name not exist in 85% Institute Quota" },
+  { sr: 9, sml: "12274.1", formNo: "266013358", name: "GANGASAGARE VAISHALI GANESH", sex: "F", category: "SC", cet: "34.43%", hscPcb: "61%", remark: "Candidate Name not exist in 85% Institute Quota" },
+];
+
 const GENERAL_MERIT_LIST = [
   { sr: 1, sml: 702, formNo: "266008878", name: "CHAVAN PAYAL RAJUDAS", sex: "F", category: "VJA", cet: "96.86%", hscPcb: "56%", remark: "-" },
   { sr: 2, sml: 1613, formNo: "266010191", name: "BADNE RUDRAKSH CHHATRABHUJ", sex: "M", category: "NT-D", cet: "93.81%", hscPcb: "71%", remark: "-" },
@@ -219,6 +322,8 @@ const Admissions = () => {
   const [activeTab, setActiveTab] = useState("residual-vacancy");
   const [activeListSubTab, setActiveListSubTab] = useState("selection"); // "selection" | "waiting" | "merit"
   const [searchQuery, setSearchQuery] = useState("");
+  const [activeInst2SubTab, setActiveInst2SubTab] = useState("selection"); // "selection" | "waiting" | "merit"
+  const [searchQuery2, setSearchQuery2] = useState("");
 
   const sections = [
     {
@@ -262,6 +367,28 @@ const Admissions = () => {
         "Selection List: Provisional seat allotment executed in strict adherence to State CET Cell, DMER Maharashtra, and constitutional reservation quotas.",
         "Waiting List: Maintained in order of inter-se merit to be operated sequentially in case any selected candidate fails to report or cancel their allotment.",
         "Physical Document Verification: Selected candidates must report in person to the College of Nursing Office at Dr. S.C.G.M.C. Campus, Vishnupuri, Nanded with all original certificates, affidavits, and self-attested photocopies.",
+        "Fee Submission: Allotted seat will be confirmed only upon payment of the prescribed college fees within the stipulated schedule.",
+        "Statutory Approval: All admissions remain provisional and subject to formal verification and approval by MUHS Nashik, DMER Maharashtra, and the Indian Nursing Council (INC).",
+      ],
+    },
+    {
+      id: "institutional-round-2",
+      title: "Institutional Round 2",
+      badge: "02 Seats Allotted",
+      icon: FileCheck,
+      fullTitle:
+        "B.Sc Nursing Admission — Institutional Level Round Second (द्वितीय संस्थात्मक फेरी)",
+      subtitle:
+        "General Merit List, Selection List and Waiting List (Ref: No.Dr.SCGCONN/Bsc Nursing adm/1216/2026, Date: 12/11/2026)",
+      tag: "Round 2 — Residual Seats",
+      downloadUrl: INST_ROUND_2_PDF,
+      downloadName: "BSc_Nursing_Inst_Round_2_Merit_Selection_Waiting_List.pdf",
+      instructions: [
+        "Second Institutional Round: Conducted to fill the 2 residual vacant seats (NT-D: 1, OBC: 1) remaining after the First Institutional Level Round of B.Sc. Nursing Admissions 2026-27.",
+        "General Merit List: Merit ranking published for all 9 applicants (7 eligible + 2 outside 85% institute quota) who registered and submitted documents at the College Office.",
+        "Selection List: 2 candidates provisionally allotted seats in strict adherence to DMER Maharashtra and State CET Cell reservation norms — OBC-Gen and Against NT-D categories.",
+        "Waiting List: Category-wise waiting maintained for OBC-General (2 candidates) and Inter-Se Group III NT-D (3 candidates) to be operated sequentially upon any vacancy.",
+        "Physical Document Verification: Selected candidates must report in person to the College of Nursing Office at Dr. S.C.G.M.C. Campus, Vishnupuri, Nanded with all original certificates and self-attested photocopies.",
         "Fee Submission: Allotted seat will be confirmed only upon payment of the prescribed college fees within the stipulated schedule.",
         "Statutory Approval: All admissions remain provisional and subject to formal verification and approval by MUHS Nashik, DMER Maharashtra, and the Indian Nursing Council (INC).",
       ],
@@ -388,6 +515,14 @@ const Admissions = () => {
       c.category.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const filteredMeritList2 = INST2_GENERAL_MERIT_LIST.filter(
+    (c) =>
+      c.name.toLowerCase().includes(searchQuery2.toLowerCase()) ||
+      c.formNo.includes(searchQuery2) ||
+      c.sml.toString().includes(searchQuery2) ||
+      c.category.toLowerCase().includes(searchQuery2.toLowerCase())
+  );
+
   return (
     <div className="w-full bg-gradient-to-br from-blue-50/60 via-white to-indigo-50/50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -407,7 +542,7 @@ const Admissions = () => {
           </p>
 
           {/* Quick Notice Cards */}
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto text-left">
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto text-left">
             {/* Notice 1: Residual Vacancy (Latest) */}
             <div className="relative bg-gradient-to-br from-rose-50/90 via-white to-amber-50/40 border-2 border-rose-300 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
               <div>
@@ -486,7 +621,46 @@ const Admissions = () => {
               </div>
             </div>
 
-            {/* Notice 3: Admission Brochure */}
+            {/* Notice 3: Institutional Round 2 */}
+            <div className="relative bg-gradient-to-br from-emerald-50/90 via-white to-emerald-50/40 border border-emerald-300 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-2.5">
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-emerald-600 text-white text-xs font-bold rounded-full uppercase tracking-wider shadow-xs">
+                    <FileCheck className="h-3.5 w-3.5" />
+                    Round 2 Lists
+                  </span>
+                  <span className="text-xs font-semibold text-emerald-900 bg-emerald-100/80 px-2 py-0.5 rounded border border-emerald-200">
+                    2 Seats Allotted
+                  </span>
+                </div>
+                <h2 className="text-base sm:text-lg font-bold text-gray-900 leading-snug">
+                  Institutional Round 2 Selection & Waiting Lists
+                </h2>
+                <p className="text-xs sm:text-sm text-gray-600 mt-1.5 leading-relaxed">
+                  General Merit list, Selection list (2 seats) and Waiting list for institutional level round second.
+                </p>
+              </div>
+
+              <div className="mt-4 pt-3 border-t border-emerald-200/70 flex flex-wrap items-center gap-2">
+                <button
+                  onClick={() => handleSelectSection("institutional-round-2")}
+                  className="flex-1 min-w-[130px] flex items-center justify-center gap-1.5 px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs sm:text-sm font-semibold transition-colors shadow-xs"
+                >
+                  <Eye className="h-4 w-4" />
+                  <span>View Lists</span>
+                </button>
+                <a
+                  href={INST_ROUND_2_PDF}
+                  download="BSc_Nursing_Inst_Round_2_Merit_Selection_Waiting_List.pdf"
+                  className="flex items-center justify-center gap-1.5 px-3 py-2 bg-white hover:bg-emerald-50 text-emerald-900 border border-emerald-300 rounded-xl text-xs sm:text-sm font-semibold transition-colors"
+                >
+                  <Download className="h-4 w-4" />
+                  <span>Download Notice</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Notice 4: Admission Brochure */}
             <div className="relative bg-white border border-indigo-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between gap-2 mb-2.5">
@@ -541,21 +715,19 @@ const Admissions = () => {
                   <button
                     key={section.id}
                     onClick={() => setActiveTab(section.id)}
-                    className={`relative flex items-center gap-2 px-3.5 sm:px-5 py-2.5 sm:py-3 rounded-xl font-medium text-xs sm:text-sm transition-all duration-200 ${
-                      isActive
+                    className={`relative flex items-center gap-2 px-3.5 sm:px-5 py-2.5 sm:py-3 rounded-xl font-medium text-xs sm:text-sm transition-all duration-200 ${isActive
                         ? "bg-indigo-600 text-white shadow-md shadow-indigo-200"
                         : "bg-slate-50 text-slate-700 hover:bg-indigo-50 hover:text-indigo-700 border border-slate-100"
-                    }`}
+                      }`}
                   >
                     <IconComponent className="h-4 w-4 flex-shrink-0" />
                     <span>{section.title}</span>
                     {section.isUrgent && (
                       <span
-                        className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wider ${
-                          isActive
+                        className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wider ${isActive
                             ? "bg-amber-400 text-slate-900"
                             : "bg-amber-500 text-white"
-                        }`}
+                          }`}
                       >
                         New
                       </span>
@@ -905,11 +1077,10 @@ const Admissions = () => {
                     <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       <button
                         onClick={() => setActiveListSubTab("selection")}
-                        className={`px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors flex items-center gap-1.5 ${
-                          activeListSubTab === "selection"
+                        className={`px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors flex items-center gap-1.5 ${activeListSubTab === "selection"
                             ? "bg-indigo-600 text-white shadow-xs"
                             : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
-                        }`}
+                          }`}
                       >
                         <Check className="h-4 w-4" />
                         <span>Selection List (7)</span>
@@ -917,11 +1088,10 @@ const Admissions = () => {
 
                       <button
                         onClick={() => setActiveListSubTab("waiting")}
-                        className={`px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors flex items-center gap-1.5 ${
-                          activeListSubTab === "waiting"
+                        className={`px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors flex items-center gap-1.5 ${activeListSubTab === "waiting"
                             ? "bg-indigo-600 text-white shadow-xs"
                             : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
-                        }`}
+                          }`}
                       >
                         <Clock className="h-4 w-4" />
                         <span>Waiting List (5)</span>
@@ -929,11 +1099,10 @@ const Admissions = () => {
 
                       <button
                         onClick={() => setActiveListSubTab("merit")}
-                        className={`px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors flex items-center gap-1.5 ${
-                          activeListSubTab === "merit"
+                        className={`px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors flex items-center gap-1.5 ${activeListSubTab === "merit"
                             ? "bg-indigo-600 text-white shadow-xs"
                             : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
-                        }`}
+                          }`}
                       >
                         <ListOrdered className="h-4 w-4" />
                         <span>General Merit List (12)</span>
@@ -1108,6 +1277,262 @@ const Admissions = () => {
               </div>
             )}
 
+            {/* INSTITUTIONAL ROUND 2 SPECIAL VIEWS */}
+            {activeSection.id === "institutional-round-2" && (
+              <div className="space-y-8">
+                {/* Important Notice Alert */}
+                <div className="p-4 bg-emerald-50/80 border border-emerald-200 rounded-2xl flex items-start gap-3">
+                  <AlertCircle className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                  <div className="text-xs sm:text-sm text-emerald-900 leading-relaxed">
+                    <strong className="font-semibold">Notice for Institutional Level Round Second (12/11/2026):</strong> Conducted for 2 residual vacant seats (NT-D: 1, OBC: 1) remaining after the First Institutional Round. Below are the Category-wise Vacancy Report, General Merit List, Selection List, and Waiting List as published by the college administration (Ref: No.Dr.SCGCONN/Bsc Nursing adm/1216/2026).
+                  </div>
+                </div>
+
+                {/* Vacant Seats Report */}
+                <div className="bg-gradient-to-br from-slate-50 to-emerald-50/30 border border-slate-200 rounded-2xl p-5 sm:p-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                    <div>
+                      <h3 className="text-base sm:text-lg font-bold text-gray-900 flex items-center gap-2">
+                        <Award className="h-5 w-5 text-emerald-600" />
+                        <span>Vacant Seats Report — Round 2 (रिक्त जागेचा अहवाल)</span>
+                      </h3>
+                      <p className="text-xs text-gray-500 mt-0.5">
+                        Category-wise vacant seat distribution for Institutional Level Round Second
+                      </p>
+                    </div>
+                    <span className="inline-flex items-center px-3 py-1 bg-emerald-600 text-white text-xs font-bold rounded-lg shadow-xs self-start sm:self-auto">
+                      Total Vacant Seats: 02
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    {INST2_VACANT_SEATS_DATA.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-white border border-slate-200 rounded-xl p-3.5 shadow-2xs hover:border-emerald-200 transition-colors"
+                      >
+                        <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-1">
+                          Category: {item.category}
+                        </div>
+                        <div className="text-2xl font-extrabold text-gray-900">
+                          {item.total.toString().padStart(2, "0")}
+                        </div>
+                        <div className="text-[11px] text-gray-500 mt-1 flex justify-between">
+                          <span>Gen: {item.general}</span>
+                          <span>Women: {item.women}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Interactive Lists Viewer */}
+                <div className="border border-slate-200 rounded-2xl overflow-hidden shadow-xs">
+                  {/* Sub-tabs bar */}
+                  <div className="bg-slate-50 border-b border-slate-200 px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                      <button
+                        onClick={() => setActiveInst2SubTab("selection")}
+                        className={`px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors flex items-center gap-1.5 ${activeInst2SubTab === "selection"
+                            ? "bg-emerald-600 text-white shadow-xs"
+                            : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
+                          }`}
+                      >
+                        <Check className="h-4 w-4" />
+                        <span>Selection List (2)</span>
+                      </button>
+
+                      <button
+                        onClick={() => setActiveInst2SubTab("waiting")}
+                        className={`px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors flex items-center gap-1.5 ${activeInst2SubTab === "waiting"
+                            ? "bg-emerald-600 text-white shadow-xs"
+                            : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
+                          }`}
+                      >
+                        <Clock className="h-4 w-4" />
+                        <span>Waiting List (5)</span>
+                      </button>
+
+                      <button
+                        onClick={() => setActiveInst2SubTab("merit")}
+                        className={`px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors flex items-center gap-1.5 ${activeInst2SubTab === "merit"
+                            ? "bg-emerald-600 text-white shadow-xs"
+                            : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
+                          }`}
+                      >
+                        <ListOrdered className="h-4 w-4" />
+                        <span>General Merit List (9)</span>
+                      </button>
+                    </div>
+
+                    {activeInst2SubTab === "merit" && (
+                      <div className="relative w-full sm:w-64">
+                        <Search className="h-3.5 w-3.5 text-gray-400 absolute left-2.5 top-1/2 -translate-y-1/2" />
+                        <input
+                          type="text"
+                          placeholder="Search name, form no, SML..."
+                          value={searchQuery2}
+                          onChange={(e) => setSearchQuery2(e.target.value)}
+                          className="w-full pl-8 pr-3 py-1 bg-white border border-slate-200 rounded-lg text-xs focus:outline-none focus:border-emerald-500"
+                        />
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Sub-tab 1: Selection List */}
+                  {activeInst2SubTab === "selection" && (
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-left border-collapse text-xs sm:text-sm">
+                        <thead>
+                          <tr className="bg-slate-100/80 text-slate-700 font-semibold border-b border-slate-200">
+                            <th className="py-3 px-3 sm:px-4">Sr.</th>
+                            <th className="py-3 px-3 sm:px-4">S.M.L</th>
+                            <th className="py-3 px-3 sm:px-4">CET Form No.</th>
+                            <th className="py-3 px-3 sm:px-4">Candidate Name</th>
+                            <th className="py-3 px-3 sm:px-4">Gender</th>
+                            <th className="py-3 px-3 sm:px-4">CET %</th>
+                            <th className="py-3 px-3 sm:px-4">Candidate Cat.</th>
+                            <th className="py-3 px-3 sm:px-4">Selected Category</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-slate-100 bg-white">
+                          {INST2_SELECTION_LIST.map((cand) => (
+                            <tr key={cand.sr} className="hover:bg-slate-50 transition-colors">
+                              <td className="py-3 px-3 sm:px-4 font-semibold text-slate-500">{cand.sr}</td>
+                              <td className="py-3 px-3 sm:px-4 font-bold text-emerald-700">{cand.sml}</td>
+                              <td className="py-3 px-3 sm:px-4 text-slate-600 font-mono text-xs">{cand.formNo}</td>
+                              <td className="py-3 px-3 sm:px-4 font-bold text-gray-900">{cand.name}</td>
+                              <td className="py-3 px-3 sm:px-4 text-slate-600">{cand.sex}</td>
+                              <td className="py-3 px-3 sm:px-4 font-semibold text-emerald-700">{cand.cet}</td>
+                              <td className="py-3 px-3 sm:px-4 font-medium text-slate-700">{cand.category}</td>
+                              <td className="py-3 px-3 sm:px-4">
+                                <span className={`inline-block px-2.5 py-0.5 rounded-full text-xs font-bold border ${cand.statusBadge}`}>
+                                  {cand.selectedCategory}
+                                </span>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+
+                  {/* Sub-tab 2: Waiting List */}
+                  {activeInst2SubTab === "waiting" && (
+                    <div className="p-4 sm:p-6 space-y-6 bg-white">
+                      {INST2_WAITING_LIST.map((group, gIdx) => (
+                        <div key={gIdx} className="border border-slate-200 rounded-xl overflow-hidden">
+                          <div className="bg-emerald-50/70 px-4 py-2.5 border-b border-emerald-200 flex items-center justify-between">
+                            <span className="font-bold text-xs sm:text-sm text-emerald-900">
+                              {group.group}
+                            </span>
+                            <span className="text-[11px] font-semibold text-emerald-800 bg-white px-2 py-0.5 rounded border border-emerald-200">
+                              {group.candidates.length} Candidate(s)
+                            </span>
+                          </div>
+                          <div className="overflow-x-auto">
+                            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+                              <thead>
+                                <tr className="bg-slate-50 text-slate-600 font-medium border-b border-slate-200">
+                                  <th className="py-2.5 px-3">Sr.</th>
+                                  <th className="py-2.5 px-3">S.M.L</th>
+                                  <th className="py-2.5 px-3">CET Form No.</th>
+                                  <th className="py-2.5 px-3">Candidate Name</th>
+                                  <th className="py-2.5 px-3">Gender</th>
+                                  <th className="py-2.5 px-3">Category</th>
+                                  <th className="py-2.5 px-3">Remark</th>
+                                </tr>
+                              </thead>
+                              <tbody className="divide-y divide-slate-100">
+                                {group.candidates.map((cand) => (
+                                  <tr key={cand.sr} className="hover:bg-slate-50">
+                                    <td className="py-2.5 px-3 font-semibold text-slate-500">{cand.sr}</td>
+                                    <td className="py-2.5 px-3 font-bold text-emerald-700">{cand.sml}</td>
+                                    <td className="py-2.5 px-3 font-mono text-xs text-slate-600">{cand.formNo}</td>
+                                    <td className="py-2.5 px-3 font-bold text-gray-900">{cand.name}</td>
+                                    <td className="py-2.5 px-3 text-slate-600">{cand.sex}</td>
+                                    <td className="py-2.5 px-3 font-medium text-slate-700">{cand.category}</td>
+                                    <td className="py-2.5 px-3 text-slate-500 text-xs">
+                                      {cand.remark !== "-" ? (
+                                        <span className="px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-medium">
+                                          {cand.remark}
+                                        </span>
+                                      ) : (
+                                        "-"
+                                      )}
+                                    </td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Sub-tab 3: General Merit List */}
+                  {activeInst2SubTab === "merit" && (
+                    <div className="overflow-x-auto bg-white">
+                      <table className="w-full text-left border-collapse text-xs sm:text-sm">
+                        <thead>
+                          <tr className="bg-slate-100/80 text-slate-700 font-semibold border-b border-slate-200">
+                            <th className="py-3 px-3">Sr.</th>
+                            <th className="py-3 px-3">S.M.L</th>
+                            <th className="py-3 px-3">CET Form No.</th>
+                            <th className="py-3 px-3">Candidate Name</th>
+                            <th className="py-3 px-3">Sex</th>
+                            <th className="py-3 px-3">Category</th>
+                            <th className="py-3 px-3">MH CET %</th>
+                            <th className="py-3 px-3">HSC PCB %</th>
+                            <th className="py-3 px-3">Remark</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-slate-100">
+                          {filteredMeritList2.map((cand) => (
+                            <tr key={cand.sr} className="hover:bg-slate-50 transition-colors">
+                              <td className="py-2.5 px-3 font-semibold text-slate-500">{cand.sr}</td>
+                              <td className="py-2.5 px-3 font-bold text-emerald-700">{cand.sml}</td>
+                              <td className="py-2.5 px-3 font-mono text-xs text-slate-600">{cand.formNo}</td>
+                              <td className="py-2.5 px-3 font-bold text-gray-900">{cand.name}</td>
+                              <td className="py-2.5 px-3 text-slate-600">{cand.sex}</td>
+                              <td className="py-2.5 px-3 font-medium text-slate-700">{cand.category}</td>
+                              <td className="py-2.5 px-3 font-semibold text-emerald-600">{cand.cet}</td>
+                              <td className="py-2.5 px-3 text-slate-600">{cand.hscPcb}</td>
+                              <td className="py-2.5 px-3 text-xs">
+                                {cand.remark !== "-" ? (
+                                  <span className="px-2 py-0.5 bg-rose-50 text-rose-700 border border-rose-200 rounded font-medium">
+                                    {cand.remark}
+                                  </span>
+                                ) : (
+                                  "-"
+                                )}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
+
+                  {/* Footer Bar */}
+                  <div className="bg-slate-50 px-4 py-3 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600">
+                    <span>
+                      Official Signed Authority: Dean, Govt. College of Nursing, Dr. S.C.G.M.C., Nanded — Date: 12/11/2026
+                    </span>
+                    <a
+                      href={INST_ROUND_2_PDF}
+                      download="BSc_Nursing_Inst_Round_2_Merit_Selection_Waiting_List.pdf"
+                      className="inline-flex items-center gap-1.5 text-emerald-700 hover:text-emerald-900 font-semibold underline underline-offset-2"
+                    >
+                      <Download className="h-3.5 w-3.5" />
+                      <span>Download Signed Administrative Copy (PDF)</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* KEY INSTRUCTIONS SECTION (Retained & Standardized) */}
             <div className="mt-8">
               <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3.5 flex items-center gap-2">
@@ -1210,6 +1635,12 @@ const Admissions = () => {
               className="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs sm:text-sm font-semibold transition-colors shadow-sm"
             >
               Institutional Round
+            </button>
+            <button
+              onClick={() => handleSelectSection("institutional-round-2")}
+              className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs sm:text-sm font-semibold transition-colors shadow-sm"
+            >
+              Round 2 Lists
             </button>
             <button
               onClick={() => handleSelectSection("admission-brochure")}
